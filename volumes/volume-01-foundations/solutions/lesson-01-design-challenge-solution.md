@@ -8,13 +8,13 @@ Create a one-resistor load that draws 10 mA from an ideal 5 V source, with nomin
 
 Using Ohm's law:
 
-\[
+$$
 R=\frac{V}{I}
-\]
+$$
 
-\[
+$$
 R=\frac{5\ \text{V}}{10\ \text{mA}}=500\ \Omega
-\]
+$$
 
 A 500 Ω resistor is available as a standard value in tighter preferred-value series. A 499 Ω resistor is also a common 1% E96 value and is acceptable.
 
@@ -22,15 +22,15 @@ A 500 Ω resistor is available as a standard value in tighter preferred-value se
 
 ### Option A — 500 Ω
 
-\[
+$$
 I=\frac{5\ \text{V}}{500\ \Omega}=10.000\ \text{mA}
-\]
+$$
 
 ### Option B — 499 Ω
 
-\[
+$$
 I=\frac{5\ \text{V}}{499\ \Omega}=10.020\ \text{mA}
-\]
+$$
 
 Both satisfy the 9.9–10.1 mA acceptance range.
 
@@ -38,15 +38,15 @@ Both satisfy the 9.9–10.1 mA acceptance range.
 
 For 500 Ω:
 
-\[
+$$
 P=VI=(5\ \text{V})(10\ \text{mA})=50\ \text{mW}
-\]
+$$
 
 The required nominal power rating must be at least twice this value:
 
-\[
-P_{rated}\ge 100\ \text{mW}
-\]
+$$
+P_{\text{rated}}\ge 100\ \text{mW}
+$$
 
 A 0.125 W resistor technically satisfies the stated rule because 50 mW is 40% of 125 mW. A 0.25 W resistor provides more thermal margin and is an appropriate reference selection for the exercise.
 
