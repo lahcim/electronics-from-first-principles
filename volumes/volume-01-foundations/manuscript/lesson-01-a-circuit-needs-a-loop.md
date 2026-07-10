@@ -47,27 +47,27 @@ The circuit contains:
 
 The expected current is obtained from Ohm's law:
 
-\[
+$$
 I = \frac{V}{R}
-\]
+$$
 
 Substituting the values:
 
-\[
+$$
 I = \frac{5\ \text{V}}{1000\ \Omega} = 0.005\ \text{A} = 5\ \text{mA}
-\]
+$$
 
 The resistor's power is:
 
-\[
+$$
 P_R = VI = 5\ \text{V} \times 5\ \text{mA} = 25\ \text{mW}
-\]
+$$
 
 or equivalently:
 
-\[
+$$
 P_R = I^2R = (5\ \text{mA})^2(1\ \text{k}\Omega)=25\ \text{mW}
-\]
+$$
 
 The ideal source delivers the same 25 mW that the ideal resistor absorbs. Depending on the current-reference direction used by ngspice, source power may be displayed as negative. That negative sign normally means the source is delivering power, not that the result is physically impossible.
 
@@ -89,6 +89,14 @@ Without a reference, the simulator could add 100 V, 1,000 V, or any other consta
 6. Label the positive node `VIN`.
 7. Verify every wire endpoint snaps to a component pin. A wire that merely appears to touch a pin can still be disconnected.
 8. Open each component's simulation-model settings and confirm that the source and resistor have valid primitive models and pin mappings.
+
+### Schematic SPICE directives / text fields
+
+**Required directives: None.** Configure the operating-point analysis in KiCad's Simulator dialog.
+
+You do not need to place `.op` as schematic text for this lesson. KiCad can request the operating-point calculation directly from the Simulator interface. This is preferable here because the lesson has no transient timing, initial condition, model include, or special ngspice option to preserve in the schematic.
+
+An ordinary visible note saying `.op` is not necessarily a SPICE directive. For later lessons that require directives such as `.tran`, `.ic`, `.include`, or `.options`, the lesson will identify the exact text, explain how to place it so KiCad exports it to the netlist, and show how to verify it.
 
 ## 8. Configure the baseline simulation
 
@@ -135,7 +143,7 @@ Run the operating-point simulation.
 
 ### Why these observations occur
 
-The source maintains a 5 V potential difference. The resistor relates voltage and current through its constitutive equation, \(V=IR\). Because the source and resistor form one series loop, charge conservation requires the same steady current through both.
+The source maintains a 5 V potential difference. The resistor relates voltage and current through its constitutive equation, $V=IR$. Because the source and resistor form one series loop, charge conservation requires the same steady current through both.
 
 The power signs depend on how current direction is defined for each element. A component absorbs positive power when positive current enters its positively referenced terminal. For the source, current normally exits the terminal marked positive while it powers the resistor, so the passive-sign calculation produces negative power.
 
@@ -154,11 +162,11 @@ Run the operating point with these resistor values:
 
 Increasing resistance by a factor of ten reduces current by a factor of ten when voltage is fixed. It also reduces power by a factor of ten because, for fixed voltage,
 
-\[
+$$
 P = \frac{V^2}{R}
-\]
+$$
 
-This is a useful reminder that the effect of changing resistance depends on what the source holds constant. Under a fixed-current source, increasing resistance would instead increase power according to \(P=I^2R\).
+This is a useful reminder that the effect of changing resistance depends on what the source holds constant. Under a fixed-current source, increasing resistance would instead increase power according to $P=I^2R$.
 
 ## 12. Experiment B — Open the loop
 
@@ -185,9 +193,9 @@ Replace R1 with a very small resistance such as `1mΩ`; do not begin with an exa
 
 Predict the current:
 
-\[
+$$
 I = \frac{5\ \text{V}}{1\ \text{m}\Omega}=5000\ \text{A}
-\]
+$$
 
 This absurd result is a feature of the idealized model. The source has zero internal resistance, the wire has almost zero resistance, and neither model includes thermal destruction or current limiting.
 
