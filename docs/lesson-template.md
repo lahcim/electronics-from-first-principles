@@ -27,6 +27,17 @@ Explain what charge, fields, current, energy, or device structure is doing befor
 
 Define every variable, polarity, reference direction, and unit. Derive the relationship and identify assumptions.
 
+Use GitHub-compatible math delimiters:
+
+- inline: `$V=IR$`;
+- display:
+
+$$
+I=\frac{V}{R}
+$$
+
+Do not use `\(...\)` or `\[...\]` in Markdown course files.
+
 ## 6. Circuit under test
 
 ![Rendered schematic](../figures/lesson-nn-baseline.svg)
@@ -41,9 +52,32 @@ Define every variable, polarity, reference direction, and unit. Derive the relat
 
 Give exact symbol, wiring, model, pin-mapping, and node-label instructions. Avoid absolute paths.
 
+### Schematic SPICE directives / text fields
+
+Always include this subsection, even when no directive is required.
+
+State either:
+
+> **Required directives:** None. Configure the analysis entirely in KiCad's Simulator dialog.
+
+or list the exact text to place on the schematic, for example:
+
+```spice
+.tran 10u 100m startup
+.ic V(VCAP)=0
+```
+
+For every directive, explain:
+
+- where/how to place it in KiCad;
+- whether it is ordinary visible text or a SPICE directive exported to the netlist;
+- what it changes;
+- why it is required;
+- how to verify it appears in the generated netlist.
+
 ## 8. Configure the simulation
 
-Specify analysis type, duration/range, maximum timestep or frequency points, initial conditions, saved traces, and any SPICE directives.
+Specify analysis type, duration/range, maximum timestep or frequency points, initial conditions, saved traces, and any SPICE directives. Identify whether the Simulator dialog or a schematic directive is authoritative when both could configure the same analysis.
 
 ## 9. Predict before running
 
@@ -118,6 +152,7 @@ State requirements without revealing the reference component values.
 
 - [ ] Calculation or estimate made before simulation
 - [ ] KiCad schematic uses meaningful node names
+- [ ] Required SPICE directive/text fields are documented, or explicitly marked as unnecessary
 - [ ] Simulation settings documented
 - [ ] Results compared with acceptance criteria
 - [ ] Component power and ratings checked
