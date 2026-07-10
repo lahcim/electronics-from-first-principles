@@ -1,0 +1,6 @@
+* Lesson 1 - A Circuit Needs a Loop
+* Reference ngspice netlist
+V1 VIN 0 DC 5
+R1 VIN 0 1k
+.op
+.end
