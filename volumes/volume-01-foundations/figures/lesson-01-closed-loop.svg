@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="440" viewBox="0 0 980 440" role="img" aria-labelledby="title desc">
+  <title id="title">Closed-loop resistor circuit</title>
+  <desc id="desc">A 5 volt source connected in series with a 1 kiloohm resistor and ground, with current direction and labeled nodes.</desc>
+  <rect width="980" height="440" fill="white"/>
+  <g stroke="#111" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="180" y1="100" x2="420" y2="100"/>
+    <polyline points="420,100 440,75 470,125 500,75 530,125 560,75 590,125 610,100"/>
+    <line x1="610" y1="100" x2="780" y2="100"/>
+    <line x1="780" y1="100" x2="780" y2="330"/>
+    <line x1="780" y1="330" x2="180" y2="330"/>
+    <line x1="180" y1="330" x2="180" y2="260"/>
+    <line x1="180" y1="180" x2="180" y2="100"/>
+    <line x1="135" y1="180" x2="225" y2="180"/>
+    <line x1="150" y1="260" x2="210" y2="260"/>
+    <line x1="480" y1="330" x2="480" y2="365"/>
+    <line x1="440" y1="365" x2="520" y2="365"/>
+    <line x1="452" y1="382" x2="508" y2="382"/>
+    <line x1="466" y1="399" x2="494" y2="399"/>
+    <line x1="270" y1="68" x2="360" y2="68"/>
+    <polyline points="345,53 360,68 345,83"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#111">
+    <text x="145" y="220" font-size="28">V1</text>
+    <text x="116" y="150" font-size="24">+</text>
+    <text x="120" y="295" font-size="28">5 V</text>
+    <text x="478" y="55" text-anchor="middle" font-size="28">R1 = 1 kΩ</text>
+    <text x="305" y="50" font-size="24">I = 5 mA</text>
+    <text x="175" y="88" font-size="22">VIN = 5 V</text>
+    <text x="794" y="224" font-size="22">return path</text>
+    <text x="530" y="420" font-size="22">node 0 (GND)</text>
+  </g>
+</svg>
