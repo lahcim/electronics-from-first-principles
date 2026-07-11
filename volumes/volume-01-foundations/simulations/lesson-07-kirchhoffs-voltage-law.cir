@@ -1,0 +1,7 @@
+* Lesson 7 - Kirchhoff's Voltage Law
+V1 VIN 0 12
+R1 VIN VMID 1k
+R2 VMID 0 2k
+.op
+.print op v(VIN) v(VMID) v(VIN,VMID)
+.end
