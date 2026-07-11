@@ -1,0 +1,26 @@
+title: Operational Amplifiers and Analog Building Blocks
+volume: 6
+lesson_count: 44
+parts:
+  - name: Op-Amp Foundations and Basic Feedback Circuits
+    lessons: 1-12
+  - name: Real Op-Amp Limitations
+    lessons: 13-26
+  - name: Active Filters and Signal-Processing Blocks
+    lessons: 27-35
+  - name: Comparators, References, and Sensor Interfaces
+    lessons: 36-42
+  - name: Design Capstones
+    lessons: 43-44
+required_software:
+  - KiCad 10
+  - ngspice bundled with KiCad
+validation:
+  predict_before_simulating: true
+  require_spice_directive_section: true
+  require_design_challenge: true
+  require_worked_validation: true
+  require_macromodel_pin_mapping_check: true
+  require_common_mode_and_output_swing_check: true
+  require_stability_and_noise_check: true
+  require_nominal_and_worst_case: true
