@@ -1,0 +1,8 @@
+* Volume 2 Lesson 8 - Coupled inductors and transformer
+V1 PRI 0 SIN(0 10 1k)
+L1 PRI 0 10m
+L2 SEC 0 2.5m
+K1 L1 L2 0.99
+RL SEC 0 100
+.tran 1u 5m
+.end
