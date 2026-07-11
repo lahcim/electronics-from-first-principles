@@ -1,0 +1,6 @@
+* Lesson 14 - Norton source
+I1 0 VOUT 120m
+RN VOUT 0 100
+RL VOUT 0 900
+.op
+.end

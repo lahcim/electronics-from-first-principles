@@ -1,0 +1,68 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Lesson 14 - Norton Models and Current Sources"
+Comment1 "Open in KiCad 10 and save as .kicad_sch"
+$EndDescr
+$Comp
+L Simulation_SPICE:ISOURCE I1
+U 1 1 140000001
+P 3600 3700
+F 0 "I1" H 3730 3791 50 0000 L CNN
+F 1 "120m" H 3730 3700 50 0000 L CNN
+	1    3600 3700
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R RN
+U 1 1 140000002
+P 5600 3700
+F 0 "RN" H 5670 3746 50 0000 L CNN
+F 1 "100" H 5670 3655 50 0000 L CNN
+	1    5600 3700
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R RL
+U 1 1 140000003
+P 7000 3700
+F 0 "RL" H 7070 3746 50 0000 L CNN
+F 1 "900" H 7070 3655 50 0000 L CNN
+	1    7000 3700
+	1 0 0 -1
+$EndComp
+$Comp
+L power:0 #PWR0141
+U 1 1 140000004
+P 5000 4600
+F 0 "#PWR0141" H 5000 4350 50 0001 C CNN
+F 1 "0" H 5005 4427 50 0000 C CNN
+	1    5000 4600
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	3600 3400 3600 3000
+Wire Wire Line
+	3600 3000 7000 3000
+Wire Wire Line
+	5600 3000 5600 3550
+Wire Wire Line
+	7000 3000 7000 3550
+Wire Wire Line
+	3600 4000 3600 4400
+Wire Wire Line
+	3600 4400 7000 4400
+Wire Wire Line
+	5600 3850 5600 4400
+Wire Wire Line
+	7000 3850 7000 4400
+Wire Wire Line
+	5000 4400 5000 4600
+Text Label 5900 3000 0 50 ~ 0
+VOUT
+$EndSCHEMATC
