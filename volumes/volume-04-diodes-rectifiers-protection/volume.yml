@@ -1,0 +1,22 @@
+title: Diodes, Rectifiers, Protection, and Semiconductor Junctions
+volume: 4
+lesson_count: 34
+parts:
+  - name: Semiconductor and Diode Fundamentals
+    lessons: 1-9
+  - name: Diode Families and Switching Behavior
+    lessons: 10-16
+  - name: Rectifiers, Smoothing, and Wave Shaping
+    lessons: 17-27
+  - name: Protection Circuits and Capstones
+    lessons: 28-34
+required_software:
+  - KiCad 10
+  - ngspice bundled with KiCad
+validation:
+  predict_before_simulating: true
+  require_spice_directive_section: true
+  require_design_challenge: true
+  require_worked_validation: true
+  require_model_pin_mapping_check: true
+  require_thermal_and_rating_check: true
