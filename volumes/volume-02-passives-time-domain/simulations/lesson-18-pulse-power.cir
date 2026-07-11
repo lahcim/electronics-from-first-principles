@@ -1,0 +1,8 @@
+* Volume 2 Lesson 18 - Pulse power and energy
+V1 IN 0 PULSE(0 50 1m 1u 1u 2m 100m)
+R1 IN 0 10
+.tran 10u 300m startup
+.meas tran E1 INTEG V(IN)*I(R1) FROM=1m TO=3m
+.meas tran PAVG AVG V(IN)*I(R1) FROM=0 TO=300m
+.meas tran PMAX MAX V(IN)*I(R1)
+.end
