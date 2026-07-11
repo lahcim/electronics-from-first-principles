@@ -1,0 +1,12 @@
+* Volume 2 Lesson 1 - What a capacitor physically stores
+V1 VIN 0 PULSE(0 5 0 1u 1u 100m 200m)
+R1 VIN VCAP 1k
+C1 VCAP 0 1u IC=0
+.tran 10u 8m startup
+.meas tran T63 WHEN V(VCAP)=3.1606 RISE=1
+.meas tran T90 WHEN V(VCAP)=4.5 RISE=1
+.meas tran V1MS FIND V(VCAP) AT=1m
+.meas tran I1MS FIND I(R1) AT=1m
+.meas tran V5MS FIND V(VCAP) AT=5m
+.meas tran ERES INTEG V(VIN,VCAP)*I(R1) FROM=0 TO=8m
+.end
