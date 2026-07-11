@@ -1,0 +1,7 @@
+* Lesson 15 - Voltmeter loading
+V1 VIN 0 9
+R1 VIN VOUT 1Meg
+R2 VOUT 0 1Meg
+RM VOUT 0 10Meg
+.op
+.end
