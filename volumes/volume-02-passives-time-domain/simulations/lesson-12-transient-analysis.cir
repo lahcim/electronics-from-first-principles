@@ -1,0 +1,12 @@
+* Volume 2 Lesson 12 - Transient initial conditions
+V1 IN 0 5
+R1 IN VCAP 10k
+C1 VCAP 0 10u
+.tran 100u 500m startup
+.meas tran T90 WHEN V(VCAP)=4.5 RISE=1
+.end
+
+* Try alternatives separately:
+* .ic V(VCAP)=2
+* .tran 100u 500m uic
+* or normal .tran 100u 500m for DC operating-point start
