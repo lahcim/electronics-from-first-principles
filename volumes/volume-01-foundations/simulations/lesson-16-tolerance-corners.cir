@@ -1,0 +1,9 @@
+* Lesson 16 - Tolerance corners
+.param R1V=10k R2V=10k
+V1 VIN 0 5
+R1 VIN VOUT {R1V}
+R2 VOUT 0 {R2V}
+.step param R1V list 9.9k 10.1k
+.step param R2V list 9.9k 10.1k
+.op
+.end
