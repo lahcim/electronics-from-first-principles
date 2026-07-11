@@ -1,0 +1,8 @@
+* Volume 2 Lesson 11 - RLC natural response
+C1 VCAP 0 1u IC=5
+L1 VCAP N1 10m IC=0
+R1 N1 0 20
+.tran 2u 10m uic
+.meas tran VMAX MAX V(VCAP)
+.meas tran VMIN MIN V(VCAP)
+.end
