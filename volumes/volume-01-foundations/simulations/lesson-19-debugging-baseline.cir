@@ -1,0 +1,6 @@
+* Lesson 19 - Correct baseline
+V1 VIN 0 5
+R1 VIN VMID 1k
+R2 VMID 0 1k
+.op
+.end
