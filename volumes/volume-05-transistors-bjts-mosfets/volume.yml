@@ -1,0 +1,25 @@
+title: Transistors — BJTs and MOSFETs
+volume: 5
+lesson_count: 60
+parts:
+  - name: BJT Fundamentals and Switching
+    lessons: 1-18
+  - name: BJT Amplifiers and Building Blocks
+    lessons: 19-30
+  - name: MOSFET Fundamentals and Switching
+    lessons: 31-47
+  - name: MOSFET Power Design and Amplifiers
+    lessons: 48-57
+  - name: CMOS Foundations and Capstones
+    lessons: 58-60
+required_software:
+  - KiCad 10
+  - ngspice bundled with KiCad
+validation:
+  predict_before_simulating: true
+  require_spice_directive_section: true
+  require_design_challenge: true
+  require_worked_validation: true
+  require_model_pin_mapping_check: true
+  require_thermal_and_soa_check: true
+  require_nominal_and_worst_case: true
