@@ -1,0 +1,87 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Lesson 15 - Meters Are Circuit Elements"
+Comment1 "Open in KiCad 10 and save as .kicad_sch"
+$EndDescr
+$Comp
+L Simulation_SPICE:VSOURCE V1
+U 1 1 150000001
+P 3000 3800
+F 0 "V1" H 3130 3891 50 0000 L CNN
+F 1 "9" H 3130 3800 50 0000 L CNN
+	1    3000 3800
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 150000002
+P 5400 3200
+F 0 "R1" H 5470 3246 50 0000 L CNN
+F 1 "1Meg" H 5470 3155 50 0000 L CNN
+	1    5400 3200
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 150000003
+P 5400 4200
+F 0 "R2" H 5470 4246 50 0000 L CNN
+F 1 "1Meg" H 5470 4155 50 0000 L CNN
+	1    5400 4200
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R RM
+U 1 1 150000004
+P 7000 4200
+F 0 "RM" H 7070 4246 50 0000 L CNN
+F 1 "10Meg" H 7070 4155 50 0000 L CNN
+	1    7000 4200
+	1 0 0 -1
+$EndComp
+$Comp
+L power:0 #PWR0151
+U 1 1 150000005
+P 4700 4900
+F 0 "#PWR0151" H 4700 4650 50 0001 C CNN
+F 1 "0" H 4705 4727 50 0000 C CNN
+	1    4700 4900
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	3000 3500 3000 2800
+Wire Wire Line
+	3000 2800 5400 2800
+Wire Wire Line
+	5400 2800 5400 3050
+Wire Wire Line
+	5400 3350 5400 3900
+Wire Wire Line
+	5400 3900 7000 3900
+Wire Wire Line
+	5400 3900 5400 4050
+Wire Wire Line
+	7000 3900 7000 4050
+Wire Wire Line
+	5400 4350 5400 4700
+Wire Wire Line
+	7000 4350 7000 4700
+Wire Wire Line
+	5400 4700 7000 4700
+Wire Wire Line
+	3000 4100 3000 4700
+Wire Wire Line
+	3000 4700 5400 4700
+Wire Wire Line
+	4700 4700 4700 4900
+Text Label 3900 2800 0 50 ~ 0
+VIN
+Text Label 5900 3900 0 50 ~ 0
+VOUT
+$EndSCHEMATC
