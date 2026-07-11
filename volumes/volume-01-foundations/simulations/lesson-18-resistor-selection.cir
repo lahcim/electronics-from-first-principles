@@ -1,0 +1,6 @@
+* Lesson 18 - Resistor selection with simplified LED drop
+V1 VIN 0 5
+R1 VIN VDROP 390
+VLED VDROP 0 2
+.op
+.end
