@@ -1,0 +1,16 @@
+* Volume 2 Lesson 13 - Power rail load step
+VREG SRC 0 3.3
+RSRC SRC N1 50m
+LSRC N1 RAIL 3n
+I_LOAD RAIL 0 PULSE(0.05 0.55 10u 20n 20n 20u 100u)
+LESR RAIL C1N 0.8n
+RESR C1N C2N 20m
+CLOCAL C2N 0 220u
+RBULK RAIL B1 60m
+LBULK B1 B2 3n
+CBULK B2 0 470u
+.tran 10n 100u startup
+.meas tran VMIN MIN V(RAIL) FROM=9u TO=40u
+.meas tran VPRE FIND V(RAIL) AT=9u
+.meas tran VDROOP PARAM='VPRE-VMIN'
+.end
