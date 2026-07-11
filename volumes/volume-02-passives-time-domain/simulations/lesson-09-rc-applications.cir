@@ -1,0 +1,10 @@
+* Volume 2 Lesson 9 - RC applications, PWM smoothing
+V1 IN 0 PULSE(0 3.3 0 100n 100n 50u 100u)
+R1 IN OUT 10k
+C1 OUT 0 1u
+RL OUT 0 100k
+.tran 2u 20m startup
+.meas tran VAVG AVG V(OUT) FROM=15m TO=20m
+.meas tran VMAX MAX V(OUT) FROM=15m TO=20m
+.meas tran VMIN MIN V(OUT) FROM=15m TO=20m
+.end
