@@ -1,0 +1,11 @@
+* Volume 2 Lesson 15 - RC snubber tuning
+V1 IN 0 PULSE(0 48 0 2n 2n 500n 2u)
+LPAR IN SW 100n
+CPAR SW 0 400p
+RSNUB SW SN 10
+CSNUB SN 0 1n
+RLOAD SW 0 1k
+.tran 1n 5u startup
+.meas tran VMAX MAX V(SW)
+.meas tran PSNUB AVG V(SW,SN)*I(RSNUB) FROM=1u TO=5u
+.end

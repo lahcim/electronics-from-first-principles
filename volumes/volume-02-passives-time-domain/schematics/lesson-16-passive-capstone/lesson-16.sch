@@ -1,0 +1,92 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 2 Lesson 16 - Passive Transient Capstone"
+Comment1 "Rail-step sheet; reuse Lessons 14 and 6 for debounce and relay sheets"
+$EndDescr
+$Comp
+L Simulation_SPICE:VSOURCE VREG
+U 1 1 361600001
+P 2500 4000
+F 0 "VREG" H 2630 4091 50 0000 L CNN
+F 1 "3.3" H 2630 4000 50 0000 L CNN
+	1    2500 4000
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R RS
+U 1 1 361600002
+P 4200 3000
+F 0 "RS" V 3993 3000 50 0000 C CNN
+F 1 "40m" V 4084 3000 50 0000 C CNN
+	1    4200 3000
+	0 1 1 0
+$EndComp
+$Comp
+L Device:L LS
+U 1 1 361600003
+P 5600 3000
+F 0 "LS" V 5790 3000 50 0000 C CNN
+F 1 "3n" V 5699 3000 50 0000 C CNN
+	1    5600 3000
+	0 -1 -1 0
+$EndComp
+$Comp
+L Device:C CLOCAL
+U 1 1 361600004
+P 7000 3900
+F 0 "CLOCAL" H 7115 3946 50 0000 L CNN
+F 1 "470u" H 7115 3855 50 0000 L CNN
+	1    7000 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L Simulation_SPICE:ISOURCE ILOAD
+U 1 1 361600005
+P 8500 3900
+F 0 "ILOAD" H 8630 3991 50 0000 L CNN
+F 1 "PULSE(0.05 0.35 10u 20n 20n 100u 500u)" H 8630 3900 50 0000 L CNN
+	1    8500 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L power:0 #PWR03601
+U 1 1 361600006
+P 5600 4900
+F 0 "#PWR03601" H 5600 4650 50 0001 C CNN
+F 1 "0" H 5605 4727 50 0000 C CNN
+	1    5600 4900
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	2500 3700 2500 3000
+Wire Wire Line
+	2500 3000 4050 3000
+Wire Wire Line
+	4350 3000 5450 3000
+Wire Wire Line
+	5750 3000 8500 3000
+Wire Wire Line
+	7000 3000 7000 3750
+Wire Wire Line
+	8500 3000 8500 3600
+Wire Wire Line
+	7000 4050 7000 4600
+Wire Wire Line
+	8500 4200 8500 4600
+Wire Wire Line
+	7000 4600 8500 4600
+Wire Wire Line
+	2500 4300 2500 4600
+Wire Wire Line
+	2500 4600 7000 4600
+Wire Wire Line
+	5600 4600 5600 4900
+Text Notes 8200 2300 0 60 ~ 0
+.tran 10n 500u startup
+$EndSCHEMATC
