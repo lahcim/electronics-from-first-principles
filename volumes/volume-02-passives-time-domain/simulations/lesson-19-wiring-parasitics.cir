@@ -1,0 +1,12 @@
+* Volume 2 Lesson 19 - Wiring parasitics and local decoupling
+V1 SRC 0 3.3
+RSUP SRC N1 10m
+LSUP N1 LOAD 3n
+I1 LOAD RET PULSE(0.1 1.1 200n 5n 5n 500n 2u)
+LRET RET N2 3n
+RRET N2 0 10m
+CLOCAL LOAD RET 10u
+.tran 1n 2u startup
+.meas tran VMIN MIN V(LOAD,RET)
+.meas tran VMAX MAX V(LOAD,RET)
+.end
