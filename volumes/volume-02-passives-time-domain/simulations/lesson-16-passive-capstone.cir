@@ -1,0 +1,14 @@
+* Volume 2 Lesson 16 - Passive transient capstone
+* Section A: 3.3 V rail load step
+VREG SRC 0 3.3
+RS SRC N1 40m
+LS N1 RAIL 3n
+ILOAD RAIL 0 PULSE(0.05 0.35 10u 20n 20n 100u 500u)
+RCAP RAIL C1 25m
+LCAP C1 C2 1n
+CLOCAL C2 0 470u
+.tran 10n 500u startup
+.meas tran VRAILMIN MIN V(RAIL) FROM=9u TO=150u
+.end
+
+* Simulate debounce and relay-turnoff as separate sheets/netlists from Lessons 14 and 6.
