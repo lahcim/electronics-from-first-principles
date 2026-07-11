@@ -1,0 +1,9 @@
+* Volume 2 Lesson 14 - Debounce with behavioral Schmitt stage
+VCC VCC 0 3.3
+VBNC SW 0 PWL(0 0 10m 0 10.1m 3.3 11m 0 12m 3.3 13m 0 14m 3.3 100m 3.3)
+R1 SW RC 100k
+C1 RC 0 100n
+BSCH OUT 0 V=if(V(RC)>2.0,3.3,if(V(RC)<1.0,0,V(OUT)))
+RKEEP OUT 0 1Meg
+.tran 10u 100m startup
+.end
