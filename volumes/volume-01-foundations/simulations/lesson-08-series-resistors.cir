@@ -1,0 +1,8 @@
+* Lesson 8 - Series resistors
+V1 VIN 0 10
+R1 VIN N1 1k
+R2 N1 N2 2k
+R3 N2 0 2k
+.op
+.print op v(VIN) v(N1) v(N2) i(V1)
+.end
