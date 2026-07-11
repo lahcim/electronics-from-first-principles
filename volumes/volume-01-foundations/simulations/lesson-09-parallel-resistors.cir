@@ -1,0 +1,8 @@
+* Lesson 9 - Parallel resistors
+V1 VIN 0 12
+R1 VIN 0 1k
+R2 VIN 0 2k
+R3 VIN 0 3k
+.op
+.print op v(VIN) i(V1)
+.end
