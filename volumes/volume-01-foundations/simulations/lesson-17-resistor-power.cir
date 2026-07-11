@@ -1,0 +1,6 @@
+* Lesson 17 - Resistor power and temperature
+V1 VIN 0 24
+R1 VIN 0 2.2k
+.op
+.temp -40 25 85 125
+.end
