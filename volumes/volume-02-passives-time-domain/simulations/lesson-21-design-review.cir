@@ -1,0 +1,14 @@
+* Volume 2 Lesson 21 - Design review rail section
+VREG SRC 0 5
+RS SRC N1 20m
+LS N1 RAIL 4n
+ILOAD RAIL 0 PULSE(0.1 2.1 1u 20n 20n 40u 200u)
+RLOCAL RAIL C1 15m
+LLOCAL C1 C2 0.8n
+CLOCAL C2 0 680u
+.tran 1n 100u startup
+.meas tran VMIN MIN V(RAIL)
+.meas tran VMAX MAX V(RAIL)
+.end
+
+* Use separate netlists from Lessons 14, 15, and 6 for button, ringing, and solenoid sections.
