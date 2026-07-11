@@ -1,0 +1,9 @@
+* Volume 2 Lesson 10 - PWM-driven RL load
+V1 IN 0 PULSE(0 24 0 1u 1u 500u 1m)
+R1 IN N1 12
+L1 N1 0 24m
+.tran 2u 20m startup
+.meas tran IMAX MAX I(L1) FROM=15m TO=20m
+.meas tran IMIN MIN I(L1) FROM=15m TO=20m
+.meas tran IAVG AVG I(L1) FROM=15m TO=20m
+.end
