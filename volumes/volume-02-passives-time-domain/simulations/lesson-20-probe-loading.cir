@@ -1,0 +1,13 @@
+* Volume 2 Lesson 20 - Probe loading on ringing node
+V1 IN 0 PULSE(0 12 0 1n 1n 100n 500n)
+L1 IN RING 47n
+C1 RING 0 600p
+RLOSS RING 0 500
+* Passive probe model
+LPG RING PM 40n
+CPROBE PM 0 10p
+RPROBE PM 0 10Meg
+* Differential probe model for comparison
+CDIFF RING 0 2p
+.tran 100p 2u startup
+.end
