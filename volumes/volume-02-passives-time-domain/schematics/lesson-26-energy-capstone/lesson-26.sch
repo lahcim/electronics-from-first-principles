@@ -1,0 +1,82 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 2 Lesson 26 - Energy Management Capstone"
+$EndDescr
+$Comp
+L Simulation_SPICE:VSOURCE VIN
+U 1 1 462600001
+P 2500 4000
+F 0 "VIN" H 2630 4091 50 0000 L CNN
+F 1 "48" H 2630 4000 50 0000 L CNN
+	1    2500 4000
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R RPRE
+U 1 1 462600002
+P 4500 3000
+F 0 "RPRE" V 4293 3000 50 0000 C CNN
+F 1 "27" V 4384 3000 50 0000 C CNN
+	1    4500 3000
+	0 1 1 0
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 462600003
+P 6500 3900
+F 0 "C1" H 6615 3946 50 0000 L CNN
+F 1 "2200u" H 6615 3855 50 0000 L CNN
+	1    6500 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R RBLEED
+U 1 1 462600004
+P 8000 3900
+F 0 "RBLEED" H 8070 3946 50 0000 L CNN
+F 1 "1.5k" H 8070 3855 50 0000 L CNN
+	1    8000 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L power:0 #PWR04601
+U 1 1 462600005
+P 5300 4800
+F 0 "#PWR04601" H 5300 4550 50 0001 C CNN
+F 1 "0" H 5305 4627 50 0000 C CNN
+	1    5300 4800
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	2500 3700 2500 3000
+Wire Wire Line
+	2500 3000 4350 3000
+Wire Wire Line
+	4650 3000 8000 3000
+Wire Wire Line
+	6500 3000 6500 3750
+Wire Wire Line
+	8000 3000 8000 3750
+Wire Wire Line
+	6500 4050 6500 4600
+Wire Wire Line
+	8000 4050 8000 4600
+Wire Wire Line
+	6500 4600 8000 4600
+Wire Wire Line
+	2500 4300 2500 4600
+Wire Wire Line
+	2500 4600 6500 4600
+Wire Wire Line
+	5300 4600 5300 4800
+Text Notes 8300 2600 0 60 ~ 0
+.tran 100u 2s startup
+Text Notes 8300 2900 0 50 ~ 0
+Add bypass switch and separate hold-up/discharge analyses from reference files.
+$EndSCHEMATC

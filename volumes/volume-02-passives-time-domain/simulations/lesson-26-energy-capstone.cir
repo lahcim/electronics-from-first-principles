@@ -1,0 +1,14 @@
+* Volume 2 Lesson 26 - Energy management capstone startup section
+VIN INPUT 0 48
+RPRE INPUT LINK 27
+C1 LINK 0 2200u IC=0
+SBYP INPUT LINK CTRL 0 SW
+VCTRL CTRL 0 PULSE(0 5 300m 1m 1m 2s 4s)
+RBLEED LINK 0 1500
+.model SW SW(Ron=20m Roff=1G Vt=2.5 Vh=0.2)
+.tran 100u 2s startup
+.meas tran IINMAX MAX -I(VIN)
+.meas tran V300 FIND V(LINK) AT=300m
+.end
+
+* Run hold-up and shutdown as separate analyses with a constant-power load and maximum-C corner.

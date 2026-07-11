@@ -1,0 +1,7 @@
+* Volume 2 Lesson 24 - Bleeder discharge
+C1 CAP 0 470u IC=400
+R1 CAP 0 62k
+.tran 10m 70s uic
+.meas tran TSAFE WHEN V(CAP)=60 FALL=1
+.meas tran EBLEED INTEG V(CAP)^2/62k FROM=0 TO=70
+.end

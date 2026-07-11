@@ -1,0 +1,53 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 2 Lesson 24 - Bleeder Discharge"
+$EndDescr
+$Comp
+L Device:C C1
+U 1 1 442400001
+P 4300 3800
+F 0 "C1" H 4415 3846 50 0000 L CNN
+F 1 "470u IC=400" H 4415 3755 50 0000 L CNN
+	1    4300 3800
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 442400002
+P 6500 3800
+F 0 "R1" H 6570 3846 50 0000 L CNN
+F 1 "62k" H 6570 3755 50 0000 L CNN
+	1    6500 3800
+	1 0 0 -1
+$EndComp
+$Comp
+L power:0 #PWR04401
+U 1 1 442400003
+P 5400 4800
+F 0 "#PWR04401" H 5400 4550 50 0001 C CNN
+F 1 "0" H 5405 4627 50 0000 C CNN
+	1    5400 4800
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	4300 3000 6500 3000
+Wire Wire Line
+	4300 3000 4300 3650
+Wire Wire Line
+	6500 3000 6500 3650
+Wire Wire Line
+	4300 3950 4300 4600
+Wire Wire Line
+	6500 3950 6500 4600
+Wire Wire Line
+	4300 4600 6500 4600
+Wire Wire Line
+	5400 4600 5400 4800
+Text Notes 7600 3000 0 60 ~ 0
+.tran 10m 70s uic
+$EndSCHEMATC

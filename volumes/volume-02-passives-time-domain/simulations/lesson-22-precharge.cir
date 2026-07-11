@@ -1,0 +1,11 @@
+* Volume 2 Lesson 22 - Inrush and precharge
+V1 VIN 0 48
+RPRE VIN LINK 24
+C1 LINK 0 2200u IC=0
+SBYP VIN LINK CTRL 0 SW
+VCTRL CTRL 0 PULSE(0 5 300m 1m 1m 700m 2s)
+.model SW SW(Ron=20m Roff=1G Vt=2.5 Vh=0.2)
+.tran 100u 1s startup
+.meas tran IINMAX MAX -I(V1)
+.meas tran V300 FIND V(LINK) AT=300m
+.end

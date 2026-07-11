@@ -1,0 +1,67 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 2 Lesson 22 - Inrush and Precharge"
+$EndDescr
+$Comp
+L Simulation_SPICE:VSOURCE V1
+U 1 1 422200001
+P 2500 4000
+F 0 "V1" H 2630 4091 50 0000 L CNN
+F 1 "48" H 2630 4000 50 0000 L CNN
+	1    2500 4000
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R RPRE
+U 1 1 422200002
+P 4700 3000
+F 0 "RPRE" V 4493 3000 50 0000 C CNN
+F 1 "24" V 4584 3000 50 0000 C CNN
+	1    4700 3000
+	0 1 1 0
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 422200003
+P 6900 3900
+F 0 "C1" H 7015 3946 50 0000 L CNN
+F 1 "2200u" H 7015 3855 50 0000 L CNN
+	1    6900 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L power:0 #PWR04201
+U 1 1 422200004
+P 5000 4800
+F 0 "#PWR04201" H 5000 4550 50 0001 C CNN
+F 1 "0" H 5005 4627 50 0000 C CNN
+	1    5000 4800
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	2500 3700 2500 3000
+Wire Wire Line
+	2500 3000 4550 3000
+Wire Wire Line
+	4850 3000 6900 3000
+Wire Wire Line
+	6900 3000 6900 3750
+Wire Wire Line
+	6900 4050 6900 4600
+Wire Wire Line
+	6900 4600 2500 4600
+Wire Wire Line
+	2500 4600 2500 4300
+Wire Wire Line
+	5000 4600 5000 4800
+Text Notes 7900 2800 0 60 ~ 0
+.tran 100u 1s startup
+Text Notes 7900 3100 0 50 ~ 0
+Add voltage-controlled bypass switch from reference netlist.
+$EndSCHEMATC

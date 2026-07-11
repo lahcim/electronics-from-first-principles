@@ -1,0 +1,8 @@
+* Volume 2 Lesson 25 - Capacitor charge sharing
+C1 N1 0 10u IC=10
+C2 N2 0 10u IC=0
+R1 N1 N2 1
+.tran 1u 20m uic
+.meas tran VFINAL FIND V(N2) AT=20m
+.meas tran ELOSS INTEG V(N1,N2)*I(R1) FROM=0 TO=20m
+.end
