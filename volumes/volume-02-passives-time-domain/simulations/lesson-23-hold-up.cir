@@ -1,0 +1,10 @@
+* Volume 2 Lesson 23 - Hold-up capacitor
+VSRC SRC 0 PWL(0 5 10m 5 10.01m 0 150m 0)
+D1 SRC BUS DSH
+.model DSH D(Is=1n Rs=50m N=1.1)
+C1 BUS 0 22m IC=0
+RLOAD BUS 0 25
+.tran 10u 150m startup
+.meas tran T45 WHEN V(BUS)=4.5 FALL=1
+.meas tran T38 WHEN V(BUS)=3.8 FALL=1
+.end
