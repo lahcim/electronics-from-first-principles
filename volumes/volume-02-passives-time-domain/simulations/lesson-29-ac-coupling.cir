@@ -1,0 +1,9 @@
+* Volume 2 Lesson 29 - AC coupling and baseline shift
+V1 IN 0 PULSE(0 3.3 0 100n 100n 2m 100m)
+C1 IN OUT 1u
+VBIAS BIAS 0 1.65
+RLOAD OUT BIAS 47k
+.tran 10u 300m startup
+.meas tran VPK MAX V(OUT)
+.meas tran VMIN MIN V(OUT)
+.end
