@@ -1,0 +1,68 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Lesson 13 - Source Resistance and Thevenin"
+Comment1 "Open in KiCad 10 and save as .kicad_sch"
+$EndDescr
+$Comp
+L Simulation_SPICE:VSOURCE V1
+U 1 1 130000001
+P 3200 3700
+F 0 "V1" H 3330 3791 50 0000 L CNN
+F 1 "12" H 3330 3700 50 0000 L CNN
+	1    3200 3700
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R RS
+U 1 1 130000002
+P 5000 3000
+F 0 "RS" V 4793 3000 50 0000 C CNN
+F 1 "100" V 4884 3000 50 0000 C CNN
+	1    5000 3000
+	0 1 1 0
+$EndComp
+$Comp
+L Device:R RL
+U 1 1 130000003
+P 6800 3700
+F 0 "RL" H 6870 3746 50 0000 L CNN
+F 1 "900" H 6870 3655 50 0000 L CNN
+	1    6800 3700
+	1 0 0 -1
+$EndComp
+$Comp
+L power:0 #PWR0131
+U 1 1 130000004
+P 5000 4600
+F 0 "#PWR0131" H 5000 4350 50 0001 C CNN
+F 1 "0" H 5005 4427 50 0000 C CNN
+	1    5000 4600
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	3200 3400 3200 3000
+Wire Wire Line
+	3200 3000 4850 3000
+Wire Wire Line
+	5150 3000 6800 3000
+Wire Wire Line
+	6800 3000 6800 3550
+Wire Wire Line
+	6800 3850 6800 4400
+Wire Wire Line
+	6800 4400 3200 4400
+Wire Wire Line
+	3200 4400 3200 4000
+Wire Wire Line
+	5000 4400 5000 4600
+Text Label 3800 3000 0 50 ~ 0
+VSRC
+Text Label 5700 3000 0 50 ~ 0
+VOUT
+$EndSCHEMATC

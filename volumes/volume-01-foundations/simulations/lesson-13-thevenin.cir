@@ -1,0 +1,6 @@
+* Lesson 13 - Thevenin source
+V1 VSRC 0 12
+RS VSRC VOUT 100
+RL VOUT 0 900
+.op
+.end
