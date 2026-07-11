@@ -1,0 +1,14 @@
+* Volume 2 Lesson 4 - Capacitor bank impedance
+V1 IN 0 AC 1
+RTEST IN BUS 1m
+L100 BUS A1 0.5n
+R100 A1 A2 20m
+C100 A2 0 100n
+L1U BUS B1 1n
+R1U B1 B2 30m
+C1U B2 0 1u
+L47U BUS C1N 5n
+R47U C1N C2N 120m
+C47U C2N 0 47u
+.ac dec 100 10 1G
+.end
