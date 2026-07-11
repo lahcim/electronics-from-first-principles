@@ -1,0 +1,96 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 2 Lesson 4 - Choosing and Placing Capacitors"
+Comment1 "AC impedance comparison; open in KiCad 10"
+$EndDescr
+$Comp
+L Simulation_SPICE:VSOURCE V1
+U 1 1 240400001
+P 2800 3800
+F 0 "V1" H 2930 3891 50 0000 L CNN
+F 1 "AC 1" H 2930 3800 50 0000 L CNN
+	1    2800 3800
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R RTEST
+U 1 1 240400002
+P 4300 3000
+F 0 "RTEST" V 4093 3000 50 0000 C CNN
+F 1 "1m" V 4184 3000 50 0000 C CNN
+	1    4300 3000
+	0 1 1 0
+$EndComp
+$Comp
+L Device:C C100N
+U 1 1 240400003
+P 5800 3800
+F 0 "C100N" H 5915 3846 50 0000 L CNN
+F 1 "100n" H 5915 3755 50 0000 L CNN
+	1    5800 3800
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:C C1U
+U 1 1 240400004
+P 7000 3800
+F 0 "C1U" H 7115 3846 50 0000 L CNN
+F 1 "1u" H 7115 3755 50 0000 L CNN
+	1    7000 3800
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:C C47U
+U 1 1 240400005
+P 8200 3800
+F 0 "C47U" H 8315 3846 50 0000 L CNN
+F 1 "47u" H 8315 3755 50 0000 L CNN
+	1    8200 3800
+	1 0 0 -1
+$EndComp
+$Comp
+L power:0 #PWR02401
+U 1 1 240400006
+P 5200 4700
+F 0 "#PWR02401" H 5200 4450 50 0001 C CNN
+F 1 "0" H 5205 4527 50 0000 C CNN
+	1    5200 4700
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	2800 3500 2800 3000
+Wire Wire Line
+	2800 3000 4150 3000
+Wire Wire Line
+	4450 3000 8200 3000
+Wire Wire Line
+	5800 3000 5800 3650
+Wire Wire Line
+	7000 3000 7000 3650
+Wire Wire Line
+	8200 3000 8200 3650
+Wire Wire Line
+	5800 3950 5800 4500
+Wire Wire Line
+	7000 3950 7000 4500
+Wire Wire Line
+	8200 3950 8200 4500
+Wire Wire Line
+	5800 4500 8200 4500
+Wire Wire Line
+	2800 4100 2800 4500
+Wire Wire Line
+	2800 4500 5800 4500
+Wire Wire Line
+	5200 4500 5200 4700
+Text Notes 7900 2200 0 60 ~ 0
+.ac dec 100 10 1G
+Text Notes 7900 2450 0 50 ~ 0
+Add ESR/ESL using the standalone reference netlist.
+$EndSCHEMATC
