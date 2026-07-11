@@ -1,0 +1,67 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 2 Lesson 30 - Thermal Time Constants"
+$EndDescr
+$Comp
+L Simulation_SPICE:ISOURCE IPWR
+U 1 1 503000001
+P 3000 3900
+F 0 "IPWR" H 3130 3991 50 0000 L CNN
+F 1 "PULSE(0 10 0 1m 1m 100m 1s)" H 3130 3900 50 0000 L CNN
+	1    3000 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R RTH
+U 1 1 503000002
+P 5600 3400
+F 0 "RTH" H 5670 3446 50 0000 L CNN
+F 1 "20" H 5670 3355 50 0000 L CNN
+	1    5600 3400
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:C CTH
+U 1 1 503000003
+P 7000 3900
+F 0 "CTH" H 7115 3946 50 0000 L CNN
+F 1 "2" H 7115 3855 50 0000 L CNN
+	1    7000 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L power:0 #PWR05001
+U 1 1 503000004
+P 5200 4800
+F 0 "#PWR05001" H 5200 4550 50 0001 C CNN
+F 1 "0" H 5205 4627 50 0000 C CNN
+	1    5200 4800
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	3000 3600 3000 3000
+Wire Wire Line
+	3000 3000 7000 3000
+Wire Wire Line
+	5600 3000 5600 3250
+Wire Wire Line
+	5600 3550 5600 4600
+Wire Wire Line
+	7000 3000 7000 3750
+Wire Wire Line
+	7000 4050 7000 4600
+Wire Wire Line
+	3000 4200 3000 4600
+Wire Wire Line
+	3000 4600 7000 4600
+Wire Wire Line
+	5200 4600 5200 4800
+Text Notes 7900 2700 0 60 ~ 0
+.tran 10m 200s startup
+$EndSCHEMATC
