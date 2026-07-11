@@ -1,0 +1,85 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 2 Lesson 6 - RL Flyback Protection"
+Comment1 "Open in KiCad 10 and save as .kicad_sch"
+$EndDescr
+$Comp
+L Simulation_SPICE:VSOURCE VCC
+U 1 1 260600001
+P 2500 4000
+F 0 "VCC" H 2630 4091 50 0000 L CNN
+F 1 "12" H 2630 4000 50 0000 L CNN
+	1    2500 4000
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R RCOIL
+U 1 1 260600002
+P 5000 3000
+F 0 "RCOIL" V 4793 3000 50 0000 C CNN
+F 1 "120" V 4884 3000 50 0000 C CNN
+	1    5000 3000
+	0 1 1 0
+$EndComp
+$Comp
+L Device:L LCOIL
+U 1 1 260600003
+P 6500 3900
+F 0 "LCOIL" H 6553 3946 50 0000 L CNN
+F 1 "100m" H 6553 3855 50 0000 L CNN
+	1    6500 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:D D1
+U 1 1 260600004
+P 8000 3900
+F 0 "D1" V 7954 3980 50 0000 L CNN
+F 1 "DCLAMP" V 8045 3980 50 0000 L CNN
+	1    8000 3900
+	0 1 1 0
+$EndComp
+$Comp
+L power:0 #PWR02601
+U 1 1 260600005
+P 4700 5000
+F 0 "#PWR02601" H 4700 4750 50 0001 C CNN
+F 1 "0" H 4705 4827 50 0000 C CNN
+	1    4700 5000
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	2500 3700 2500 3000
+Wire Wire Line
+	2500 3000 4850 3000
+Wire Wire Line
+	5150 3000 6500 3000
+Wire Wire Line
+	6500 3000 8000 3000
+Wire Wire Line
+	6500 3000 6500 3750
+Wire Wire Line
+	8000 3000 8000 3750
+Wire Wire Line
+	6500 4050 6500 4700
+Wire Wire Line
+	8000 4050 8000 4700
+Wire Wire Line
+	6500 4700 8000 4700
+Wire Wire Line
+	2500 4300 2500 4700
+Wire Wire Line
+	2500 4700 6500 4700
+Wire Wire Line
+	4700 4700 4700 5000
+Text Notes 8500 2900 0 60 ~ 0
+.tran 2u 20m startup
+Text Notes 8500 3150 0 50 ~ 0
+Reference netlist includes the controlled switch and diode models.
+$EndSCHEMATC

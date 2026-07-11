@@ -1,0 +1,9 @@
+* Volume 2 Lesson 3 - Real capacitor transient model
+I1 0 IN PULSE(0 1 1u 10n 10n 10u 20u)
+LESL IN N1 1n
+RESR N1 N2 50m
+CIDEAL N2 0 10u
+RLEAK N2 0 100Meg
+.tran 10n 20u startup
+.meas tran VESR FIND V(N1) AT=1.02u
+.end

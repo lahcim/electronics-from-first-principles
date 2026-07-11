@@ -1,0 +1,13 @@
+* Volume 2 Lesson 6 - Relay coil flyback
+VCC VPLUS 0 12
+RCOIL VPLUS NCOIL 120
+LCOIL NCOIL NSW 100m
+S1 NSW 0 CTRL 0 SWMOD
+VCTRL CTRL 0 PULSE(0 5 0 1u 1u 10m 20m)
+D1 NSW VPLUS DCLAMP
+.model SWMOD SW(Ron=0.05 Roff=1G Vt=2 Vh=0.2)
+.model DCLAMP D(Is=1n Rs=0.1 Tt=2u Bv=100)
+.tran 2u 20m startup
+.meas tran IBEFORE FIND I(LCOIL) AT=9.9m
+.meas tran IAFTER FIND I(LCOIL) AT=15m
+.end

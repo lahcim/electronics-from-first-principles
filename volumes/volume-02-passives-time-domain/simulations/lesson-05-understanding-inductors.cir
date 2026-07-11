@@ -1,0 +1,8 @@
+* Volume 2 Lesson 5 - Understanding inductors
+V1 IN 0 PULSE(0 5 0 1u 1u 500u 1m)
+R1 IN N1 100
+L1 N1 0 10m IC=0
+.tran 1u 1m startup
+.meas tran I100U FIND I(L1) AT=100u
+.meas tran I300U FIND I(L1) AT=300u
+.end
