@@ -1,0 +1,6 @@
+* Lesson 5 - Resistance and conductance
+V1 VIN 0 0
+R1 VIN 0 1k
+.dc V1 0 10 0.1
+.print dc v(VIN) i(V1)
+.end
