@@ -1,0 +1,7 @@
+* Lesson 10 - Mixed resistor networks
+V1 VIN 0 12
+R1 VIN VX 1k
+R2 VX 0 2k
+R3 VX 0 3k
+.op
+.end

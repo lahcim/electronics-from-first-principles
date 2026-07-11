@@ -1,0 +1,85 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Lesson 10 - Mixed Resistor Networks"
+Comment1 "Open in KiCad 10 and save as .kicad_sch"
+$EndDescr
+$Comp
+L Simulation_SPICE:VSOURCE V1
+U 1 1 100000001
+P 3200 3600
+F 0 "V1" H 3330 3691 50 0000 L CNN
+F 1 "12" H 3330 3600 50 0000 L CNN
+	1    3200 3600
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 100000002
+P 5000 3000
+F 0 "R1" V 4793 3000 50 0000 C CNN
+F 1 "1k" V 4884 3000 50 0000 C CNN
+	1    5000 3000
+	0 1 1 0
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 100000003
+P 6200 3600
+F 0 "R2" H 6270 3646 50 0000 L CNN
+F 1 "2k" H 6270 3555 50 0000 L CNN
+	1    6200 3600
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 100000004
+P 7400 3600
+F 0 "R3" H 7470 3646 50 0000 L CNN
+F 1 "3k" H 7470 3555 50 0000 L CNN
+	1    7400 3600
+	1 0 0 -1
+$EndComp
+$Comp
+L power:0 #PWR0101
+U 1 1 100000005
+P 5300 4400
+F 0 "#PWR0101" H 5300 4150 50 0001 C CNN
+F 1 "0" H 5305 4227 50 0000 C CNN
+	1    5300 4400
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	3200 3300 3200 3000
+Wire Wire Line
+	3200 3000 4850 3000
+Wire Wire Line
+	5150 3000 6200 3000
+Wire Wire Line
+	6200 3000 7400 3000
+Wire Wire Line
+	6200 3000 6200 3450
+Wire Wire Line
+	7400 3000 7400 3450
+Wire Wire Line
+	6200 3750 6200 4200
+Wire Wire Line
+	7400 3750 7400 4200
+Wire Wire Line
+	6200 4200 7400 4200
+Wire Wire Line
+	3200 3900 3200 4200
+Wire Wire Line
+	3200 4200 6200 4200
+Wire Wire Line
+	5300 4200 5300 4400
+Text Label 3800 3000 0 50 ~ 0
+VIN
+Text Label 5600 3000 0 50 ~ 0
+VX
+$EndSCHEMATC
