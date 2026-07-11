@@ -1,0 +1,8 @@
+* Lesson 6 - Kirchhoff's Current Law
+V1 VIN 0 10
+R1 VIN NODE_A 1k
+R2 NODE_A 0 2k
+R3 NODE_A 0 2k
+.op
+.print op v(NODE_A) i(V1)
+.end
