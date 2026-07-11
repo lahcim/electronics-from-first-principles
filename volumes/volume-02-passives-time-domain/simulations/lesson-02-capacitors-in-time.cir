@@ -1,0 +1,9 @@
+* Volume 2 Lesson 2 - Capacitors in time
+V1 IN 0 PULSE(0 5 0 1u 1u 50m 100m)
+R1 IN VCAP 10k
+C1 VCAP 0 1u IC=0
+.tran 50u 120m startup
+.meas tran T63 WHEN V(VCAP)=3.1606 RISE=1
+.meas tran T90 WHEN V(VCAP)=4.5 RISE=1
+.meas tran TD37 WHEN V(VCAP)=1.8394 FALL=1
+.end
