@@ -1,0 +1,6 @@
+measurement,expected
+V(VIN),5 V
+I(R1),5 mA magnitude
+P(R1),25 mW
+P(V1),-25 mW
+E_R_10s,0.25 J
