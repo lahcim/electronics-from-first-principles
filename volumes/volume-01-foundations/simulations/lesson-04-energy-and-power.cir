@@ -1,0 +1,6 @@
+* Lesson 4 - Energy and Power
+V1 VIN 0 5
+R1 VIN 0 1k
+.tran 10m 10s
+.meas tran E_R INTEG V(VIN)*I(R1) FROM=0 TO=10s
+.end
