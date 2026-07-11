@@ -1,0 +1,5 @@
+measurement,expected_V
+V(TOP),8
+V(MID),3
+V(TOP,MID),5
+V(MID,TOP),-5
