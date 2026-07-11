@@ -1,0 +1,65 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 2 Lesson 27 - Passive Pulse Shaping"
+$EndDescr
+$Comp
+L Simulation_SPICE:VPULSE V1
+U 1 1 472700001
+P 2600 3900
+F 0 "V1" H 2730 3991 50 0000 L CNN
+F 1 "PULSE(0 5 0 100n 100n 1m 10m)" H 2730 3900 50 0000 L CNN
+	1    2600 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R RINT
+U 1 1 472700002
+P 4700 3000
+F 0 "RINT" V 4493 3000 50 0000 C CNN
+F 1 "100k" V 4584 3000 50 0000 C CNN
+	1    4700 3000
+	0 1 1 0
+$EndComp
+$Comp
+L Device:C CINT
+U 1 1 472700003
+P 6500 3900
+F 0 "CINT" H 6615 3946 50 0000 L CNN
+F 1 "1u" H 6615 3855 50 0000 L CNN
+	1    6500 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L power:0 #PWR04701
+U 1 1 472700004
+P 5000 4800
+F 0 "#PWR04701" H 5000 4550 50 0001 C CNN
+F 1 "0" H 5005 4627 50 0000 C CNN
+	1    5000 4800
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	2600 3600 2600 3000
+Wire Wire Line
+	2600 3000 4550 3000
+Wire Wire Line
+	4850 3000 6500 3000
+Wire Wire Line
+	6500 3000 6500 3750
+Wire Wire Line
+	6500 4050 6500 4600
+Wire Wire Line
+	6500 4600 2600 4600
+Wire Wire Line
+	2600 4600 2600 4200
+Wire Wire Line
+	5000 4600 5000 4800
+Text Notes 7800 2900 0 60 ~ 0
+.tran 2u 30m startup
+$EndSCHEMATC
