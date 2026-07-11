@@ -1,0 +1,9 @@
+* Volume 2 Lesson 17 - RC tolerance corners
+.param RVAL=100k CVAL=1u VDD=3.3 VTH=2
+V1 IN 0 {VDD}
+R1 IN OUT {RVAL}
+C1 OUT 0 {CVAL}
+.tran 100u 300m startup
+.meas tran TCROSS WHEN V(OUT)={VTH} RISE=1
+* Run explicit corners by changing RVAL, CVAL, VDD, and VTH.
+.end

@@ -1,0 +1,54 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 2 Lesson 18 - Pulse Power"
+$EndDescr
+$Comp
+L Simulation_SPICE:VPULSE V1
+U 1 1 381800001
+P 3300 3900
+F 0 "V1" H 3430 3991 50 0000 L CNN
+F 1 "PULSE(0 50 1m 1u 1u 2m 100m)" H 3430 3900 50 0000 L CNN
+	1    3300 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 381800002
+P 5600 3100
+F 0 "R1" V 5393 3100 50 0000 C CNN
+F 1 "10" V 5484 3100 50 0000 C CNN
+	1    5600 3100
+	0 1 1 0
+$EndComp
+$Comp
+L power:0 #PWR03801
+U 1 1 381800003
+P 4500 4800
+F 0 "#PWR03801" H 4500 4550 50 0001 C CNN
+F 1 "0" H 4505 4627 50 0000 C CNN
+	1    4500 4800
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	3300 3600 3300 3100
+Wire Wire Line
+	3300 3100 5450 3100
+Wire Wire Line
+	5750 3100 7000 3100
+Wire Wire Line
+	7000 3100 7000 4500
+Wire Wire Line
+	7000 4500 3300 4500
+Wire Wire Line
+	3300 4500 3300 4200
+Wire Wire Line
+	4500 4500 4500 4800
+Text Notes 7900 2900 0 60 ~ 0
+.tran 10u 300m startup
+$EndSCHEMATC
