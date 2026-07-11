@@ -1,0 +1,7 @@
+* Lesson 2 — Charge and Current
+I1 0 VCAP PULSE(0 1m 0 1u 1u 5m 10m)
+C1 VCAP 0 1u IC=0
+.tran 10u 6m uic
+.meas tran V1MS FIND V(VCAP) AT=1m
+.meas tran V5MS FIND V(VCAP) AT=5m
+.end
