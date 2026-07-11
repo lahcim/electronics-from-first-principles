@@ -1,0 +1,26 @@
+title: Feedback, Timing, and Oscillators
+volume: 7
+lesson_count: 46
+parts:
+  - name: Feedback and Oscillator Foundations
+    lessons: 1-8
+  - name: RC, Relaxation, Multivibrator, and 555 Timing Circuits
+    lessons: 9-20
+  - name: LC and Transistor Oscillators
+    lessons: 21-25
+  - name: Crystal Oscillators and Precision Timing
+    lessons: 26-40
+  - name: PLLs, Jitter, Clock Distribution, and Capstones
+    lessons: 41-46
+required_software:
+  - KiCad 10
+  - ngspice bundled with KiCad
+validation:
+  predict_before_simulating: true
+  require_spice_directive_section: true
+  require_design_challenge: true
+  require_worked_validation: true
+  require_startup_and_initial_condition_review: true
+  require_loop_gain_and_phase_review: true
+  require_crystal_model_and_pin_mapping_check: true
+  require_nominal_and_worst_case: true
