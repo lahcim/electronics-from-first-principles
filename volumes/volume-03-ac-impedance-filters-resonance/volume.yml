@@ -1,0 +1,21 @@
+title: AC Signals, Impedance, Filters, and Resonance
+volume: 3
+lesson_count: 35
+parts:
+  - name: AC Signals, RMS, Phase, and Complex Numbers
+    lessons: 1-9
+  - name: Impedance and Frequency Response
+    lessons: 10-18
+  - name: Passive Filters and Loading
+    lessons: 19-27
+  - name: Resonance, Damping, and Design Capstones
+    lessons: 28-35
+required_software:
+  - KiCad 10
+  - ngspice bundled with KiCad
+validation:
+  predict_before_simulating: true
+  require_spice_directive_section: true
+  require_design_challenge: true
+  require_worked_validation: true
+  require_ac_and_transient_comparison: true
