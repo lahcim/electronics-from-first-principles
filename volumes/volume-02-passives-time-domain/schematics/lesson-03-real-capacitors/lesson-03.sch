@@ -1,0 +1,96 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 2 Lesson 3 - Real Capacitors"
+Comment1 "Open in KiCad 10 and save as .kicad_sch"
+$EndDescr
+$Comp
+L Simulation_SPICE:ISOURCE I1
+U 1 1 230300001
+P 3000 3800
+F 0 "I1" H 3130 3891 50 0000 L CNN
+F 1 "PULSE(0 1 1u 10n 10n 10u 20u)" H 3130 3800 50 0000 L CNN
+	1    3000 3800
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:L LESL
+U 1 1 230300002
+P 4700 3000
+F 0 "LESL" V 4890 3000 50 0000 C CNN
+F 1 "1n" V 4799 3000 50 0000 C CNN
+	1    4700 3000
+	0 -1 -1 0
+$EndComp
+$Comp
+L Device:R RESR
+U 1 1 230300003
+P 5900 3000
+F 0 "RESR" V 5693 3000 50 0000 C CNN
+F 1 "50m" V 5784 3000 50 0000 C CNN
+	1    5900 3000
+	0 1 1 0
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 230300004
+P 7200 3900
+F 0 "C1" H 7315 3946 50 0000 L CNN
+F 1 "10u" H 7315 3855 50 0000 L CNN
+	1    7200 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R RLEAK
+U 1 1 230300005
+P 8500 3900
+F 0 "RLEAK" H 8570 3946 50 0000 L CNN
+F 1 "100Meg" H 8570 3855 50 0000 L CNN
+	1    8500 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L power:0 #PWR02301
+U 1 1 230300006
+P 5800 4800
+F 0 "#PWR02301" H 5800 4550 50 0001 C CNN
+F 1 "0" H 5805 4627 50 0000 C CNN
+	1    5800 4800
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	3000 3500 3000 3000
+Wire Wire Line
+	3000 3000 4550 3000
+Wire Wire Line
+	4850 3000 5750 3000
+Wire Wire Line
+	6050 3000 7200 3000
+Wire Wire Line
+	7200 3000 8500 3000
+Wire Wire Line
+	7200 3000 7200 3750
+Wire Wire Line
+	8500 3000 8500 3750
+Wire Wire Line
+	7200 4050 7200 4600
+Wire Wire Line
+	8500 4050 8500 4600
+Wire Wire Line
+	7200 4600 8500 4600
+Wire Wire Line
+	3000 4100 3000 4600
+Wire Wire Line
+	3000 4600 7200 4600
+Wire Wire Line
+	5800 4600 5800 4800
+Text Notes 8000 2200 0 60 ~ 0
+.tran 10n 20u startup
+Text Notes 8000 2450 0 50 ~ 0
+Mark as a SPICE directive and verify the generated netlist.
+$EndSCHEMATC
