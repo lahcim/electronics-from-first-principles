@@ -1,0 +1,8 @@
+* Lesson 20 - Sensor divider capstone
+VS VSENSOR 0 12
+RS VSENSOR VIN 1k
+R1 VIN VADC 30k
+R2 VADC 0 10k
+RADC VADC 0 1Meg
+.op
+.end

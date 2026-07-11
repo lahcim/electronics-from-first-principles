@@ -1,0 +1,104 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Lesson 20 - Capstone Sensor Divider Interface"
+Comment1 "Open in KiCad 10 and save as .kicad_sch"
+$EndDescr
+$Comp
+L Simulation_SPICE:VSOURCE VS
+U 1 1 200000001
+P 2600 3900
+F 0 "VS" H 2730 3991 50 0000 L CNN
+F 1 "12" H 2730 3900 50 0000 L CNN
+	1    2600 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R RS
+U 1 1 200000002
+P 4100 3000
+F 0 "RS" V 3893 3000 50 0000 C CNN
+F 1 "1k" V 3984 3000 50 0000 C CNN
+	1    4100 3000
+	0 1 1 0
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 200000003
+P 6000 3400
+F 0 "R1" H 6070 3446 50 0000 L CNN
+F 1 "30k" H 6070 3355 50 0000 L CNN
+	1    6000 3400
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 200000004
+P 6000 4400
+F 0 "R2" H 6070 4446 50 0000 L CNN
+F 1 "10k" H 6070 4355 50 0000 L CNN
+	1    6000 4400
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R RADC
+U 1 1 200000005
+P 7600 4400
+F 0 "RADC" H 7670 4446 50 0000 L CNN
+F 1 "1Meg" H 7670 4355 50 0000 L CNN
+	1    7600 4400
+	1 0 0 -1
+$EndComp
+$Comp
+L power:0 #PWR0201
+U 1 1 200000006
+P 5000 5200
+F 0 "#PWR0201" H 5000 4950 50 0001 C CNN
+F 1 "0" H 5005 5027 50 0000 C CNN
+	1    5000 5200
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	2600 3600 2600 3000
+Wire Wire Line
+	2600 3000 3950 3000
+Wire Wire Line
+	4250 3000 6000 3000
+Wire Wire Line
+	6000 3000 6000 3250
+Wire Wire Line
+	6000 3550 6000 4100
+Wire Wire Line
+	6000 4100 7600 4100
+Wire Wire Line
+	6000 4100 6000 4250
+Wire Wire Line
+	7600 4100 7600 4250
+Wire Wire Line
+	6000 4550 6000 5000
+Wire Wire Line
+	7600 4550 7600 5000
+Wire Wire Line
+	6000 5000 7600 5000
+Wire Wire Line
+	2600 4200 2600 5000
+Wire Wire Line
+	2600 5000 6000 5000
+Wire Wire Line
+	5000 5000 5000 5200
+Text Label 3000 3000 0 50 ~ 0
+VSENSOR
+Text Label 4900 3000 0 50 ~ 0
+VIN
+Text Label 6500 4100 0 50 ~ 0
+VADC
+Text Notes 8300 3200 0 60 ~ 0
+.dc VS 0 12 0.1
+Text Notes 8300 3500 0 50 ~ 0
+Mark as SPICE directive for the input sweep.
+$EndSCHEMATC
