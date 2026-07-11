@@ -1,0 +1,81 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 2 Lesson 7 - Real Inductor"
+Comment1 "Open in KiCad 10 and save as .kicad_sch"
+$EndDescr
+$Comp
+L Simulation_SPICE:VSOURCE V1
+U 1 1 270700001
+P 3000 3800
+F 0 "V1" H 3130 3891 50 0000 L CNN
+F 1 "AC 1" H 3130 3800 50 0000 L CNN
+	1    3000 3800
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R RDCR
+U 1 1 270700002
+P 5000 3000
+F 0 "RDCR" V 4793 3000 50 0000 C CNN
+F 1 "80m" V 4884 3000 50 0000 C CNN
+	1    5000 3000
+	0 1 1 0
+$EndComp
+$Comp
+L Device:L L1
+U 1 1 270700003
+P 6600 3000
+F 0 "L1" V 6790 3000 50 0000 C CNN
+F 1 "10u" V 6699 3000 50 0000 C CNN
+	1    6600 3000
+	0 -1 -1 0
+$EndComp
+$Comp
+L Device:C CPAR
+U 1 1 270700004
+P 6600 4200
+F 0 "CPAR" H 6715 4246 50 0000 L CNN
+F 1 "30p" H 6715 4155 50 0000 L CNN
+	1    6600 4200
+	1 0 0 -1
+$EndComp
+$Comp
+L power:0 #PWR02701
+U 1 1 270700005
+P 5000 4900
+F 0 "#PWR02701" H 5000 4650 50 0001 C CNN
+F 1 "0" H 5005 4727 50 0000 C CNN
+	1    5000 4900
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	3000 3500 3000 3000
+Wire Wire Line
+	3000 3000 4850 3000
+Wire Wire Line
+	5150 3000 6450 3000
+Wire Wire Line
+	6750 3000 7600 3000
+Wire Wire Line
+	6600 4050 6600 3600
+Wire Wire Line
+	6600 3600 5200 3600
+Wire Wire Line
+	5200 3600 5200 3000
+Wire Wire Line
+	6600 4350 6600 4600
+Wire Wire Line
+	6600 4600 3000 4600
+Wire Wire Line
+	3000 4600 3000 4100
+Wire Wire Line
+	5000 4600 5000 4900
+Text Notes 8000 3000 0 60 ~ 0
+.ac dec 100 1k 100Meg
+$EndSCHEMATC

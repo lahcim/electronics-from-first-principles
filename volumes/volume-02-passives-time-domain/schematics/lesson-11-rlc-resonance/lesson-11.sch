@@ -1,0 +1,68 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 2 Lesson 11 - RLC Resonance and Damping"
+Comment1 "Open in KiCad 10 and save as .kicad_sch"
+$EndDescr
+$Comp
+L Device:C C1
+U 1 1 311100001
+P 3500 3800
+F 0 "C1" H 3615 3846 50 0000 L CNN
+F 1 "1u IC=5" H 3615 3755 50 0000 L CNN
+	1    3500 3800
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:L L1
+U 1 1 311100002
+P 5500 3000
+F 0 "L1" V 5690 3000 50 0000 C CNN
+F 1 "10m" V 5599 3000 50 0000 C CNN
+	1    5500 3000
+	0 -1 -1 0
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 311100003
+P 7200 3800
+F 0 "R1" H 7270 3846 50 0000 L CNN
+F 1 "20" H 7270 3755 50 0000 L CNN
+	1    7200 3800
+	1 0 0 -1
+$EndComp
+$Comp
+L power:0 #PWR03101
+U 1 1 311100004
+P 5300 4800
+F 0 "#PWR03101" H 5300 4550 50 0001 C CNN
+F 1 "0" H 5305 4627 50 0000 C CNN
+	1    5300 4800
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	3500 3650 3500 3000
+Wire Wire Line
+	3500 3000 5350 3000
+Wire Wire Line
+	5650 3000 7200 3000
+Wire Wire Line
+	7200 3000 7200 3650
+Wire Wire Line
+	7200 3950 7200 4600
+Wire Wire Line
+	7200 4600 3500 4600
+Wire Wire Line
+	3500 4600 3500 3950
+Wire Wire Line
+	5300 4600 5300 4800
+Text Notes 8200 3000 0 60 ~ 0
+.ic V(VCAP)=5
+Text Notes 8200 3250 0 60 ~ 0
+.tran 2u 10m uic
+$EndSCHEMATC

@@ -1,0 +1,87 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 2 Lesson 8 - Coupled Inductors and Transformers"
+Comment1 "Open in KiCad 10 and save as .kicad_sch"
+$EndDescr
+$Comp
+L Simulation_SPICE:VSOURCE V1
+U 1 1 280800001
+P 3000 3800
+F 0 "V1" H 3130 3891 50 0000 L CNN
+F 1 "SIN(0 10 1k)" H 3130 3800 50 0000 L CNN
+	1    3000 3800
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:L L1
+U 1 1 280800002
+P 5000 3900
+F 0 "L1" H 5053 3946 50 0000 L CNN
+F 1 "10m" H 5053 3855 50 0000 L CNN
+	1    5000 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:L L2
+U 1 1 280800003
+P 6800 3900
+F 0 "L2" H 6853 3946 50 0000 L CNN
+F 1 "2.5m" H 6853 3855 50 0000 L CNN
+	1    6800 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R RL
+U 1 1 280800004
+P 8200 3900
+F 0 "RL" H 8270 3946 50 0000 L CNN
+F 1 "100" H 8270 3855 50 0000 L CNN
+	1    8200 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L power:0 #PWR02801
+U 1 1 280800005
+P 5600 4900
+F 0 "#PWR02801" H 5600 4650 50 0001 C CNN
+F 1 "0" H 5605 4727 50 0000 C CNN
+	1    5600 4900
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	3000 3500 3000 3000
+Wire Wire Line
+	3000 3000 5000 3000
+Wire Wire Line
+	5000 3000 5000 3750
+Wire Wire Line
+	5000 4050 5000 4600
+Wire Wire Line
+	5000 4600 3000 4600
+Wire Wire Line
+	3000 4600 3000 4100
+Wire Wire Line
+	6800 3000 8200 3000
+Wire Wire Line
+	6800 3000 6800 3750
+Wire Wire Line
+	8200 3000 8200 3750
+Wire Wire Line
+	6800 4050 6800 4600
+Wire Wire Line
+	8200 4050 8200 4600
+Wire Wire Line
+	6800 4600 8200 4600
+Wire Wire Line
+	5600 4600 5600 4900
+Text Notes 8800 3000 0 60 ~ 0
+K1 L1 L2 0.99
+Text Notes 8800 3250 0 60 ~ 0
+.tran 1u 5m
+$EndSCHEMATC

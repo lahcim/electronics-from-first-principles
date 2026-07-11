@@ -1,0 +1,9 @@
+* Volume 2 Lesson 7 - Real inductor model
+V1 IN 0 AC 1
+RTEST IN N0 1m
+RDCR N0 N1 80m
+L1 N1 OUT 10u
+CPAR N1 OUT 30p
+RCORE N1 OUT 100k
+.ac dec 100 1k 100Meg
+.end

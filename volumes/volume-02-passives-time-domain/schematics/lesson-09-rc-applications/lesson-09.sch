@@ -1,0 +1,81 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 2 Lesson 9 - RC Applications"
+Comment1 "PWM smoothing example; open in KiCad 10"
+$EndDescr
+$Comp
+L Simulation_SPICE:VPULSE V1
+U 1 1 290900001
+P 3000 3800
+F 0 "V1" H 3130 3891 50 0000 L CNN
+F 1 "PULSE(0 3.3 0 100n 100n 50u 100u)" H 3130 3800 50 0000 L CNN
+	1    3000 3800
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 290900002
+P 5000 3000
+F 0 "R1" V 4793 3000 50 0000 C CNN
+F 1 "10k" V 4884 3000 50 0000 C CNN
+	1    5000 3000
+	0 1 1 0
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 290900003
+P 6800 3900
+F 0 "C1" H 6915 3946 50 0000 L CNN
+F 1 "1u" H 6915 3855 50 0000 L CNN
+	1    6800 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R RL
+U 1 1 290900004
+P 8200 3900
+F 0 "RL" H 8270 3946 50 0000 L CNN
+F 1 "100k" H 8270 3855 50 0000 L CNN
+	1    8200 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L power:0 #PWR02901
+U 1 1 290900005
+P 5000 4900
+F 0 "#PWR02901" H 5000 4650 50 0001 C CNN
+F 1 "0" H 5005 4727 50 0000 C CNN
+	1    5000 4900
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	3000 3500 3000 3000
+Wire Wire Line
+	3000 3000 4850 3000
+Wire Wire Line
+	5150 3000 8200 3000
+Wire Wire Line
+	6800 3000 6800 3750
+Wire Wire Line
+	8200 3000 8200 3750
+Wire Wire Line
+	6800 4050 6800 4600
+Wire Wire Line
+	8200 4050 8200 4600
+Wire Wire Line
+	6800 4600 8200 4600
+Wire Wire Line
+	3000 4100 3000 4600
+Wire Wire Line
+	3000 4600 6800 4600
+Wire Wire Line
+	5000 4600 5000 4900
+Text Notes 8500 3000 0 60 ~ 0
+.tran 2u 20m startup
+$EndSCHEMATC
