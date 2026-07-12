@@ -1,0 +1,11 @@
+* Lesson 33 - Inverting charge pump
+VCLK CLK 0 PULSE(0 5 0 20n 20n 5u 10u)
+CFLY CLK N1 10u
+D1 0 N1 DS
+D2 OUT N1 DS
+COUT OUT 0 10u
+RLOAD OUT 0 1k
+.model DS D(Is=2u N=1.1 Rs=0.2 Cjo=20p)
+.tran 100n 5m startup
+.meas tran VOUT FIND V(OUT) AT=5m
+.end
