@@ -1,0 +1,10 @@
+* Lesson 24 - Stored charge comparison
+V1 IN 0 PULSE(1 -5 0 1n 1n 2u 4u)
+R1 IN A1 10
+D1 A1 0 DFAST
+R2 IN A2 10
+D2 A2 0 DSLOW
+.model DFAST D(Is=2n N=1.5 Rs=0.2 Tt=5n Cjo=10p)
+.model DSLOW D(Is=2n N=1.5 Rs=0.2 Tt=200n Cjo=10p)
+.tran 1n 8u startup
+.end
