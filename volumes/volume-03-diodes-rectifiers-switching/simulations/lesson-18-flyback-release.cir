@@ -1,0 +1,12 @@
+* Lesson 18 - Flyback release tradeoff
+V1 VCC 0 12
+RCOIL VCC N1 240
+LCOIL N1 SW 80m
+S1 SW 0 CTRL 0 SWM
+VCTRL CTRL 0 PULSE(0 5 0 1u 1u 20m 40m)
+D1 SW VCC DCL
+.model SWM SW(Ron=20m Roff=1G Vt=2.5 Vh=0.1)
+.model DCL D(Is=2n N=1.5 Rs=0.2)
+.tran 10u 50m startup
+.meas tran T10 WHEN I(LCOIL)=10m FALL=1
+.end
