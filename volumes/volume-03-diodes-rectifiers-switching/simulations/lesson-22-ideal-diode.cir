@@ -1,0 +1,13 @@
+* Lesson 22 - Ideal diode behavioral model
+VA A 0 PULSE(12 10 0 1u 1u 5m 10m)
+VB B 0 11
+RA A OUT 10m
+RB B OUT 10m
+SWA A OUT CTRLA 0 SWM
+SWB B OUT CTRLB 0 SWM
+BCA CTRLA 0 V=if(V(A)>V(OUT),5,0)
+BCB CTRLB 0 V=if(V(B)>V(OUT),5,0)
+RLOAD OUT 0 2.4
+.model SWM SW(Ron=10m Roff=1G Vt=2.5 Vh=0.1)
+.tran 1u 20m startup
+.end
