@@ -1,0 +1,13 @@
+* Lesson 16 - Input protection
+V1 IN 0 PWL(0 0 1m 24 3m 24 4m -24 6m -24 7m 0)
+R1 IN PIN 24k
+VDD VDD 0 2.5
+DHI PIN VDD DCL
+DLO 0 PIN DCL
+CIN PIN 0 30p
+RLOAD PIN 0 1Meg
+.model DCL D(Is=2u N=1.1 Rs=0.2 Cjo=8p Bv=40)
+.tran 100n 8m startup
+.meas tran IPOS MAX I(DHI)
+.meas tran INEG MAX I(DLO)
+.end
