@@ -1,0 +1,14 @@
+* Lesson 6 - Transformer rectifier supply
+V1 SRC AC2 SIN(0 16.97 60)
+RS SRC AC1 1.5
+D1 AC1 OUTP D
+D2 AC2 OUTP D
+D3 OUTN AC1 D
+D4 OUTN AC2 D
+C1 OUTP OUTN 2200u
+RLOAD OUTP OUTN 100
+.model D D(Is=5n N=1.8 Rs=0.1)
+.tran 20u 500m startup
+.meas tran VMAX MAX V(OUTP,OUTN) FROM=300m TO=500m
+.meas tran VMIN MIN V(OUTP,OUTN) FROM=300m TO=500m
+.end
