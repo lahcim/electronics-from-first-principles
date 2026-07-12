@@ -1,0 +1,65 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 3 Lesson 9 - Zener Corner Analysis"
+$EndDescr
+$Comp
+L Simulation_SPICE:VSOURCE V1
+U 1 1 690900001
+P 2700 3900
+F 0 "V1" H 2830 3991 50 0000 L CNN
+F 1 "{VIN}" H 2830 3900 50 0000 L CNN
+	1    2700 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 690900002
+P 4800 3000
+F 0 "R1" V 4593 3000 50 0000 C CNN
+F 1 "{RSET}" V 4684 3000 50 0000 C CNN
+	1    4800 3000
+	0 1 1 0
+$EndComp
+$Comp
+L Device:D_Zener DZ
+U 1 1 690900003
+P 6900 3900
+F 0 "DZ" V 6854 3980 50 0000 L CNN
+F 1 "6.2V" V 6945 3980 50 0000 L CNN
+	1    6900 3900
+	0 1 1 0
+$EndComp
+$Comp
+L power:0 #PWR06901
+U 1 1 690900004
+P 5000 4800
+F 0 "#PWR06901" H 5000 4550 50 0001 C CNN
+F 1 "0" H 5005 4627 50 0000 C CNN
+	1    5000 4800
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	2700 3600 2700 3000
+Wire Wire Line
+	2700 3000 4650 3000
+Wire Wire Line
+	4950 3000 6900 3000
+Wire Wire Line
+	6900 3000 6900 3750
+Wire Wire Line
+	6900 4050 6900 4600
+Wire Wire Line
+	6900 4600 2700 4600
+Wire Wire Line
+	2700 4600 2700 4200
+Wire Wire Line
+	5000 4600 5000 4800
+Text Notes 7900 2700 0 60 ~ 0
+.param VIN=10 RSET=330 RLOAD=1k
+$EndSCHEMATC
