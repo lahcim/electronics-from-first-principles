@@ -1,0 +1,13 @@
+* Volume 2 Lesson 28 - Rise time and settling
+V1 IN 0 PULSE(0 1 0 100n 100n 10m 20m)
+R1 IN N1 10k
+C1 N1 0 10n
+R2 N1 OUT 10k
+C2 OUT 0 10n
+RL OUT 0 50k
+.tran 1u 2m startup
+.ac dec 100 10 10Meg
+.meas tran T10 WHEN V(OUT)=0.1 RISE=1
+.meas tran T90 WHEN V(OUT)=0.9 RISE=1
+.meas tran T99 WHEN V(OUT)=0.99 RISE=1
+.end

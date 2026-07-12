@@ -1,0 +1,9 @@
+* Volume 2 Lesson 30 - Thermal RC analogy
+* 1 V represents 1 degree C; current source value represents watts
+IPWR TEMP 0 PULSE(0 10 0 1m 1m 100m 1s)
+RTH TEMP 0 20
+CTH TEMP 0 2
+.tran 10m 200s startup
+.meas tran TMAX MAX V(TEMP)
+.meas tran TAVG AVG V(TEMP) FROM=150 TO=200
+.end

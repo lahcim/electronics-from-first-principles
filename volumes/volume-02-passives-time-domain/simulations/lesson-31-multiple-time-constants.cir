@@ -1,0 +1,11 @@
+* Volume 2 Lesson 31 - Multiple time constants
+V1 IN 0 PULSE(0 5 0 1u 1u 1s 2s)
+R1 IN N1 1k
+C1 N1 0 100n
+R2 N1 OUT 100k
+C2 OUT 0 1u
+RL OUT 0 1Meg
+.tran 1u 1s startup
+.meas tran T90 WHEN V(OUT)=4.5 RISE=1
+.meas tran T99 WHEN V(OUT)=4.95 RISE=1
+.end
