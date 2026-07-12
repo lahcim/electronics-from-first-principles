@@ -1,0 +1,11 @@
+* Lesson 7 - Rectifier inrush
+V1 SRC 0 SIN(0 33.94 60 0 0 90)
+RS SRC N1 0.8
+D1 N1 BUS D
+C1 BUS 0 6800u IC=0
+RLOAD BUS 0 1k
+.model D D(Is=5n N=1.8 Rs=50m)
+.tran 10u 200m startup
+.meas tran IPEAK MAX I(D1)
+.meas tran EIN INTEG V(N1,BUS)*I(D1) FROM=0 TO=200m
+.end
