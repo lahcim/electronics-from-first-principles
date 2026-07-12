@@ -1,0 +1,10 @@
+* Lesson 15 - Positive clamper
+V1 IN 0 SIN(0 2 500)
+C1 IN OUT 1u
+D1 0 OUT DCL
+RLOAD OUT 0 47k
+.model DCL D(Is=2n N=1.5 Rs=0.2)
+.tran 2u 20m startup
+.meas tran VMAX MAX V(OUT) FROM=10m TO=20m
+.meas tran VMIN MIN V(OUT) FROM=10m TO=20m
+.end
