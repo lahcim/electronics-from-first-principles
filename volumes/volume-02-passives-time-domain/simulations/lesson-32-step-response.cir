@@ -1,0 +1,11 @@
+* Lesson 32 - Step response diagnostic
+V1 IN 0 PULSE(0 1 0 100n 100n 10m 20m)
+R1 IN N1 100
+L1 N1 OUT 10m
+C1 OUT 0 1u
+RLOAD OUT 0 1k
+.tran 100n 20m startup
+.meas tran VPK MAX V(OUT)
+.meas tran T10 WHEN V(OUT)=0.1 RISE=1
+.meas tran T90 WHEN V(OUT)=0.9 RISE=1
+.end
