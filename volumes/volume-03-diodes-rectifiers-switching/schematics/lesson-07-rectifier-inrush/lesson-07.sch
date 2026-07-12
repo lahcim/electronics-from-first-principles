@@ -1,0 +1,65 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 3 Lesson 7 - Rectifier Inrush"
+$EndDescr
+$Comp
+L Simulation_SPICE:VSIN V1
+U 1 1 670700001
+P 2800 3900
+F 0 "V1" H 2930 3991 50 0000 L CNN
+F 1 "SIN(0 33.94 60 0 0 90)" H 2930 3900 50 0000 L CNN
+	1    2800 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R RS
+U 1 1 670700002
+P 4800 3000
+F 0 "RS" V 4593 3000 50 0000 C CNN
+F 1 "0.8" V 4684 3000 50 0000 C CNN
+	1    4800 3000
+	0 1 1 0
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 670700003
+P 7000 3900
+F 0 "C1" H 7115 3946 50 0000 L CNN
+F 1 "6800u" H 7115 3855 50 0000 L CNN
+	1    7000 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L power:0 #PWR06701
+U 1 1 670700004
+P 5000 4800
+F 0 "#PWR06701" H 5000 4550 50 0001 C CNN
+F 1 "0" H 5005 4627 50 0000 C CNN
+	1    5000 4800
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	2800 3600 2800 3000
+Wire Wire Line
+	2800 3000 4650 3000
+Wire Wire Line
+	4950 3000 7000 3000
+Wire Wire Line
+	7000 3000 7000 3750
+Wire Wire Line
+	7000 4050 7000 4600
+Wire Wire Line
+	7000 4600 2800 4600
+Wire Wire Line
+	2800 4600 2800 4200
+Wire Wire Line
+	5000 4600 5000 4800
+Text Notes 7900 2800 0 60 ~ 0
+.tran 10u 200m startup
+$EndSCHEMATC

@@ -1,0 +1,11 @@
+* Lesson 13 - Symmetric diode clipper
+V1 IN 0 SIN(0 10 1k)
+R1 IN OUT 1k
+D1 OUT 0 DSI
+D2 0 OUT DSI
+RLOAD OUT 0 100k
+.model DSI D(Is=2n N=1.8 Rs=0.2 Cjo=10p)
+.tran 10u 10m startup
+.meas tran VMAX MAX V(OUT)
+.meas tran VMIN MIN V(OUT)
+.end

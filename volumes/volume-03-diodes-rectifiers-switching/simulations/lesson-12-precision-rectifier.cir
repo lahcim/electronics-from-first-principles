@@ -1,0 +1,9 @@
+* Lesson 12 - Simplified precision rectifier
+VIN IN 0 SIN(0 0.1 1k)
+EOP OA 0 IN FB 1e5
+D1 OA OUT DFAST
+RLOAD OUT 0 10k
+RFB OUT FB 1
+.model DFAST D(Is=2n N=1.6 Rs=0.2 Cjo=5p Tt=5n)
+.tran 1u 5m startup
+.end

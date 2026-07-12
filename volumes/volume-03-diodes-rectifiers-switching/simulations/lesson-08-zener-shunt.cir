@@ -1,0 +1,8 @@
+* Lesson 8 - Zener shunt regulator
+V1 IN 0 12
+R1 IN OUT 470
+DZ OUT 0 DZ5V1
+RLOAD OUT 0 1k
+.model DZ5V1 D(Is=1n N=1.5 Bv=5.1 Ibv=5m Rs=5)
+.dc V1 6 15 10m
+.end

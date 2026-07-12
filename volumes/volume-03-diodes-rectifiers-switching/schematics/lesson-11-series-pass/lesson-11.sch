@@ -1,0 +1,66 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Transistor_BJT
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 3 Lesson 11 - Series Pass Regulator"
+$EndDescr
+$Comp
+L Simulation_SPICE:VSOURCE V1
+U 1 1 711100001
+P 2400 3900
+F 0 "V1" H 2530 3991 50 0000 L CNN
+F 1 "12" H 2530 3900 50 0000 L CNN
+	1    2400 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:D_Zener DZ
+U 1 1 711100002
+P 4700 3900
+F 0 "DZ" V 4654 3980 50 0000 L CNN
+F 1 "6.2V" V 4745 3980 50 0000 L CNN
+	1    4700 3900
+	0 1 1 0
+$EndComp
+$Comp
+L Transistor_BJT:Q_NPN_CBE Q1
+U 1 1 711100003
+P 6700 3000
+F 0 "Q1" H 6891 3046 50 0000 L CNN
+F 1 "NPN" H 6891 2955 50 0000 L CNN
+	1    6700 3000
+	1 0 0 -1
+$EndComp
+$Comp
+L power:0 #PWR07101
+U 1 1 711100004
+P 5000 4800
+F 0 "#PWR07101" H 5000 4550 50 0001 C CNN
+F 1 "0" H 5005 4627 50 0000 C CNN
+	1    5000 4800
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	2400 3600 2400 3000
+Wire Wire Line
+	2400 3000 6500 3000
+Wire Wire Line
+	4700 3000 4700 3750
+Wire Wire Line
+	4700 4050 4700 4600
+Wire Wire Line
+	2400 4200 2400 4600
+Wire Wire Line
+	2400 4600 6800 4600
+Wire Wire Line
+	6800 3200 6800 4600
+Wire Wire Line
+	5000 4600 5000 4800
+Text Notes 7900 2800 0 60 ~ 0
+.dc V1 7 15 10m
+$EndSCHEMATC

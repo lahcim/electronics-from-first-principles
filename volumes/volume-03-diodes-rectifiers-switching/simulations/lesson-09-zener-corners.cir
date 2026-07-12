@@ -1,0 +1,9 @@
+* Lesson 9 - Zener corner fixture
+.param VIN=10 RSET=330 RLOAD=1k
+V1 IN 0 {VIN}
+R1 IN OUT {RSET}
+DZ OUT 0 DZ6V2
+RL OUT 0 {RLOAD}
+.model DZ6V2 D(Is=1n N=1.5 Bv=6.2 Ibv=5m Rs=8)
+.op
+.end

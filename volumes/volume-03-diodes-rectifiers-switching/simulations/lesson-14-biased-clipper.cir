@@ -1,0 +1,11 @@
+* Lesson 14 - Biased clipper
+V1 IN 0 SIN(0 8 1k)
+R1 IN OUT 2.2k
+VHI HI 0 3.3
+VLO LO 0 -0.3
+DHI OUT HI DCL
+DLO LO OUT DCL
+RLOAD OUT 0 100k
+.model DCL D(Is=2n N=1.5 Rs=0.2 Cjo=8p)
+.tran 5u 10m startup
+.end

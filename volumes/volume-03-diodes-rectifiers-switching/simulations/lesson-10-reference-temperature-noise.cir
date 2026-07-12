@@ -1,0 +1,11 @@
+* Lesson 10 - Reference drift and filtering
+V1 IN 0 12
+R1 IN REF 1k
+DZ REF 0 DZ5V1
+RF REF OUT 1k
+CF OUT 0 10u
+RLOAD OUT 0 100k
+.model DZ5V1 D(Is=1n N=1.5 Bv=5.1 Ibv=5m Rs=20 Tt=20n)
+.tran 10u 100m startup
+.dc V1 8 15 10m
+.end
