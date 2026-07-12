@@ -1,0 +1,10 @@
+* Lesson 11 - Zener referenced series-pass regulator
+V1 IN 0 12
+RB IN BASE 470
+DZ BASE 0 DZ6V2
+Q1 IN BASE OUT QNPN
+RLOAD OUT 0 50
+.model DZ6V2 D(Is=1n N=1.5 Bv=6.2 Ibv=5m Rs=5)
+.model QNPN NPN(Bf=80 Vaf=100 Is=1e-14)
+.dc V1 7 15 10m
+.end
