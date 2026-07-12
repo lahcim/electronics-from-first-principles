@@ -1,0 +1,13 @@
+* Lesson 27 - Diode technology comparison
+V1 IN 0 PULSE(0 100 0 20n 20n 2u 5u)
+R1 IN A1 20
+D1 A1 0 DSCH
+R2 IN A2 20
+D2 A2 0 DFAST
+R3 IN A3 20
+D3 A3 0 DSIC
+.model DSCH D(Is=2u N=1.1 Rs=40m Tt=2n Cjo=200p Bv=60)
+.model DFAST D(Is=2n N=1.5 Rs=80m Tt=80n Cjo=40p Bv=600)
+.model DSIC D(Is=1p N=1.8 Rs=100m Tt=1n Cjo=80p Bv=650)
+.tran 10n 20u startup
+.end
