@@ -1,0 +1,13 @@
+* Lesson 34 - Differential and common-mode filtering
+VPA AIN 0 AC 0.5
+VNA BIN 0 AC -0.5
+L1 AIN AOUT 100u
+L2 BIN BOUT 100u
+K1 L1 L2 0.99
+CX AOUT BOUT 10n
+CYA AOUT 0 1n
+CYB BOUT 0 1n
+RLA AOUT 0 100
+RLB BOUT 0 100
+.ac dec 100 100 100Meg
+.end

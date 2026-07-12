@@ -1,0 +1,12 @@
+* Lesson 36 - Passive interface capstone
+V1 SRC 0 PULSE(0 3.3 0 1n 1n 100n 200n)
+RDRV SRC N1 18
+RSER N1 LINEIN 33
+T1 LINEIN 0 LOAD 0 Z0=50 TD=10n
+RLOAD LOAD 0 1Meg
+CLOAD LOAD 0 8p
+.tran 100p 300n startup
+.meas tran T10 WHEN V(LOAD)=0.33 RISE=1
+.meas tran T90 WHEN V(LOAD)=2.97 RISE=1
+.meas tran VMAX MAX V(LOAD)
+.end

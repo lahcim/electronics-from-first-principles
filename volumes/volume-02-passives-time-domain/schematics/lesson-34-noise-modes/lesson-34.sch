@@ -1,0 +1,50 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 2 Lesson 34 - Differential and Common Mode Filtering"
+$EndDescr
+$Comp
+L Device:L L1
+U 1 1 543400001
+P 4300 2800
+F 0 "L1" V 4490 2800 50 0000 C CNN
+F 1 "100u" V 4399 2800 50 0000 C CNN
+	1    4300 2800
+	0 -1 -1 0
+$EndComp
+$Comp
+L Device:L L2
+U 1 1 543400002
+P 4300 4200
+F 0 "L2" V 4490 4200 50 0000 C CNN
+F 1 "100u" V 4399 4200 50 0000 C CNN
+	1    4300 4200
+	0 -1 -1 0
+$EndComp
+$Comp
+L Device:C CX
+U 1 1 543400003
+P 6500 3500
+F 0 "CX" H 6615 3546 50 0000 L CNN
+F 1 "10n" H 6615 3455 50 0000 L CNN
+	1    6500 3500
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	4450 2800 7600 2800
+Wire Wire Line
+	4450 4200 7600 4200
+Wire Wire Line
+	6500 2800 6500 3350
+Wire Wire Line
+	6500 3650 6500 4200
+Text Notes 7900 2800 0 60 ~ 0
+K1 L1 L2 0.99
+Text Notes 7900 3100 0 60 ~ 0
+.ac dec 100 100 100Meg
+$EndSCHEMATC
