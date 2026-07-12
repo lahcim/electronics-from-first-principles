@@ -1,0 +1,39 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 3 Lesson 29 - RC Snubber"
+$EndDescr
+$Comp
+L Device:L LSTRAY
+U 1 1 892900001
+P 4200 3000
+F 0 "LSTRAY" V 4390 3000 50 0000 C CNN
+F 1 "50n" V 4299 3000 50 0000 C CNN
+	1    4200 3000
+	0 -1 -1 0
+$EndComp
+$Comp
+L Device:R RSNUB
+U 1 1 892900002
+P 6200 3600
+F 0 "RSNUB" H 6270 3646 50 0000 L CNN
+F 1 "22" H 6270 3555 50 0000 L CNN
+	1    6200 3600
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:C CSNUB
+U 1 1 892900003
+P 6200 4300
+F 0 "CSNUB" H 6315 4346 50 0000 L CNN
+F 1 "220p" H 6315 4255 50 0000 L CNN
+	1    6200 4300
+	1 0 0 -1
+$EndComp
+Text Notes 7800 2800 0 60 ~ 0
+.tran 100p 2u startup
+$EndSCHEMATC

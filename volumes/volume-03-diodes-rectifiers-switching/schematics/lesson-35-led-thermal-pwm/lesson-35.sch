@@ -1,0 +1,40 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 3 Lesson 35 - LED Thermal and PWM"
+$EndDescr
+$Comp
+L Simulation_SPICE:VPULSE VCTRL
+U 1 1 953500001
+P 2800 3900
+F 0 "VCTRL" H 2930 3991 50 0000 L CNN
+F 1 "PULSE(0 5 0 1u 1u 5m 10m)" H 2930 3900 50 0000 L CNN
+	1    2800 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R RSET
+U 1 1 953500002
+P 5000 3000
+F 0 "RSET" V 4793 3000 50 0000 C CNN
+F 1 "25.7" V 4884 3000 50 0000 C CNN
+	1    5000 3000
+	0 1 1 0
+$EndComp
+$Comp
+L Device:LED D1
+U 1 1 953500003
+P 7000 3900
+F 0 "D1" V 7039 3782 50 0000 R CNN
+F 1 "1W LED" V 6948 3782 50 0000 R CNN
+	1    7000 3900
+	0 -1 -1 0
+$EndComp
+Text Notes 8000 2800 0 60 ~ 0
+.tran 10u 30m startup
+$EndSCHEMATC

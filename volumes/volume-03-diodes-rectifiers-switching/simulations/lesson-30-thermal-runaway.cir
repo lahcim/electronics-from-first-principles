@@ -1,0 +1,9 @@
+* Lesson 30 - Leakage and thermal feedback approximation
+VREV N 0 48
+RLEAK N 0 {48/ILEAK}
+.param ILEAK=20m
+BPOWER P 0 V=V(N)*I(VREV)
+RTH P T 35
+CTH T 0 1
+.tran 10m 200s startup
+.end

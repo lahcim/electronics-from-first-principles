@@ -1,0 +1,30 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 3 Lesson 34 - LED Current Limiting"
+$EndDescr
+$Comp
+L Device:R R1
+U 1 1 943400001
+P 4700 3000
+F 0 "R1" V 4493 3000 50 0000 C CNN
+F 1 "180" V 4584 3000 50 0000 C CNN
+	1    4700 3000
+	0 1 1 0
+$EndComp
+$Comp
+L Device:LED D1
+U 1 1 943400002
+P 6500 3900
+F 0 "D1" V 6539 3782 50 0000 R CNN
+F 1 "LED" V 6448 3782 50 0000 R CNN
+	1    6500 3900
+	0 -1 -1 0
+$EndComp
+Text Notes 8000 2800 0 60 ~ 0
+.dc V1 3.0 3.6 10m
+$EndSCHEMATC

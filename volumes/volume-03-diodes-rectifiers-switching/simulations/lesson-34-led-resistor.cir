@@ -1,0 +1,7 @@
+* Lesson 34 - LED resistor corners
+V1 IN 0 3.3
+R1 IN LEDN 180
+DLED LEDN 0 LEDM
+.model LEDM D(Is=1e-20 N=2 Rs=5 Eg=2.2)
+.dc V1 3.0 3.6 10m
+.end

@@ -1,0 +1,11 @@
+* Lesson 28 - Diode switching loss cell
+V1 BUS 0 200
+L1 BUS SW 100u IC=3
+D1 0 SW DREC
+S1 SW 0 CTRL 0 SWM
+VCTRL CTRL 0 PULSE(0 5 2u 5n 5n 3u 6.667u)
+.model DREC D(Is=2n N=1.5 Rs=0.1 Tt=80n Cjo=50p Bv=400)
+.model SWM SW(Ron=30m Roff=1G Vt=2.5 Vh=0.1)
+.tran 100p 20u startup
+.meas tran EDIO INTEG V(0,SW)*I(D1) FROM=0 TO=20u
+.end

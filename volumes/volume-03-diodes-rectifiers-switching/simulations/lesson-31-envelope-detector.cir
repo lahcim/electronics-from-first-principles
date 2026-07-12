@@ -1,0 +1,8 @@
+* Lesson 31 - AM envelope detector
+BAM IN 0 V=(1+0.5*sin(2*pi*1k*time))*sin(2*pi*100k*time)
+D1 IN OUT DDET
+C1 OUT 0 10n
+R1 OUT 0 10k
+.model DDET D(Is=2u N=1.1 Rs=1 Cjo=5p)
+.tran 20n 5m startup
+.end
