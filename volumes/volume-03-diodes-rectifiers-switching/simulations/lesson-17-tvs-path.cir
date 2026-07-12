@@ -1,0 +1,10 @@
+* Lesson 17 - TVS path inductance
+IPULSE CONN 0 PULSE(0 30 1n 500p 20n 50n 200n)
+LPATH CONN TVS 5n
+RPATH TVS 0 20m
+DTVS TVS 0 DTV
+RLOAD CONN 0 1k
+.model DTV D(Is=1n N=1.2 Bv=18 Ibv=1m Rs=0.2 Cjo=200p)
+.tran 50p 200n startup
+.meas tran VPK MAX V(CONN)
+.end

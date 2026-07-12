@@ -1,0 +1,9 @@
+* Lesson 21 - Reverse polarity comparison
+V1 IN 0 12
+D1 IN OUTD DS
+RLOADD OUTD 0 4
+RMOS IN OUTM 25m
+RLOADM OUTM 0 4
+.model DS D(Is=2u N=1.1 Rs=50m Bv=40)
+.dc V1 -15 15 50m
+.end

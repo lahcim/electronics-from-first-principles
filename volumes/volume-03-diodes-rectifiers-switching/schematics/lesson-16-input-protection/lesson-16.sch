@@ -1,0 +1,65 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 3 Lesson 16 - Input Protection"
+$EndDescr
+$Comp
+L Simulation_SPICE:VPULSE V1
+U 1 1 761600001
+P 2500 3900
+F 0 "V1" H 2630 3991 50 0000 L CNN
+F 1 "fault waveform" H 2630 3900 50 0000 L CNN
+	1    2500 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 761600002
+P 4700 3000
+F 0 "R1" V 4493 3000 50 0000 C CNN
+F 1 "24k" V 4584 3000 50 0000 C CNN
+	1    4700 3000
+	0 1 1 0
+$EndComp
+$Comp
+L Device:D_Schottky DHI
+U 1 1 761600003
+P 6800 3500
+F 0 "DHI" V 6754 3580 50 0000 L CNN
+F 1 "Clamp" V 6845 3580 50 0000 L CNN
+	1    6800 3500
+	0 1 1 0
+$EndComp
+$Comp
+L power:0 #PWR07601
+U 1 1 761600004
+P 5000 4800
+F 0 "#PWR07601" H 5000 4550 50 0001 C CNN
+F 1 "0" H 5005 4627 50 0000 C CNN
+	1    5000 4800
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	2500 3600 2500 3000
+Wire Wire Line
+	2500 3000 4550 3000
+Wire Wire Line
+	4850 3000 6800 3000
+Wire Wire Line
+	6800 3000 6800 3350
+Wire Wire Line
+	6800 3650 6800 4600
+Wire Wire Line
+	6800 4600 2500 4600
+Wire Wire Line
+	2500 4600 2500 4200
+Wire Wire Line
+	5000 4600 5000 4800
+Text Notes 7900 2800 0 60 ~ 0
+.tran 100n 8m startup
+$EndSCHEMATC

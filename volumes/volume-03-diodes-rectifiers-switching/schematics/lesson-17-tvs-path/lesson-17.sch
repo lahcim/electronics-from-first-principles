@@ -1,0 +1,47 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 3 Lesson 17 - TVS Path"
+$EndDescr
+$Comp
+L Device:L LPATH
+U 1 1 771700001
+P 4700 3000
+F 0 "LPATH" V 4890 3000 50 0000 C CNN
+F 1 "5n" V 4799 3000 50 0000 C CNN
+	1    4700 3000
+	0 -1 -1 0
+$EndComp
+$Comp
+L Device:D_TVS DTVS
+U 1 1 771700002
+P 6800 3900
+F 0 "DTVS" V 6754 3980 50 0000 L CNN
+F 1 "TVS" V 6845 3980 50 0000 L CNN
+	1    6800 3900
+	0 1 1 0
+$EndComp
+$Comp
+L power:0 #PWR07701
+U 1 1 771700003
+P 5000 4800
+F 0 "#PWR07701" H 5000 4550 50 0001 C CNN
+F 1 "0" H 5005 4627 50 0000 C CNN
+	1    5000 4800
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	4850 3000 6800 3000
+Wire Wire Line
+	6800 3000 6800 3750
+Wire Wire Line
+	6800 4050 6800 4600
+Wire Wire Line
+	5000 4600 5000 4800
+Text Notes 7900 2800 0 60 ~ 0
+.tran 50p 200n startup
+$EndSCHEMATC

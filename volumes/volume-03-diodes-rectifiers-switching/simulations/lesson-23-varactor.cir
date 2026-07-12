@@ -1,0 +1,10 @@
+* Lesson 23 - Varactor-tuned resonator
+VBIAS BIAS 0 5
+RBIAS BIAS TANK 1Meg
+L1 TANK 0 10u
+DVAR 0 TANK DVARM
+CIN IN TANK 1p
+VAC IN 0 AC 1
+.model DVARM D(Is=1p N=1 Cjo=100p Vj=1 M=0.5 Rs=1)
+.ac dec 200 100k 20Meg
+.end

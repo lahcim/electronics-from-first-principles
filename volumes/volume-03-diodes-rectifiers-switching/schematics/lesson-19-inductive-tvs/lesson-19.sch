@@ -1,0 +1,30 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 3 Lesson 19 - Inductive TVS Clamp"
+$EndDescr
+$Comp
+L Device:L LCOIL
+U 1 1 791900001
+P 4700 3000
+F 0 "LCOIL" V 4890 3000 50 0000 C CNN
+F 1 "200m" V 4799 3000 50 0000 C CNN
+	1    4700 3000
+	0 -1 -1 0
+$EndComp
+$Comp
+L Device:D_TVS DTVS
+U 1 1 791900002
+P 6500 3900
+F 0 "DTVS" V 6454 3980 50 0000 L CNN
+F 1 "36V" V 6545 3980 50 0000 L CNN
+	1    6500 3900
+	0 1 1 0
+$EndComp
+Text Notes 7800 2800 0 60 ~ 0
+.tran 10u 100m startup
+$EndSCHEMATC
