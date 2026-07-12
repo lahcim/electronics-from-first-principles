@@ -1,0 +1,20 @@
+EESchema Schematic File Version 4
+LIBS:Transistor_FET
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 4 Lesson 5 - MOSFET Datasheet Selection"
+$EndDescr
+$Comp
+L Transistor_FET:Q_NMOS_GSD Q1
+U 1 1 110500001
+P 5400 3200
+F 0 "Q1" H 5605 3246 50 0000 L CNN
+F 1 "Candidate MOSFET" H 5605 3155 50 0000 L CNN
+	1    5400 3200
+	1 0 0 -1
+$EndComp
+Text Notes 7400 2800 0 60 ~ 0
+Use hot maximum Rds(on) and actual Vgs
+$EndSCHEMATC
