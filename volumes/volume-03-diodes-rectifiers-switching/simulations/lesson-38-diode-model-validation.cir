@@ -1,0 +1,7 @@
+* Lesson 38 - Diode model validation fixture
+V1 IN 0 0
+R1 IN A 10m
+D1 A 0 DUT
+.model DUT D(Is=2u N=1.1 Rs=40m Cjo=200p Vj=0.7 M=0.5 Bv=60 Ibv=1m Tt=2n)
+.dc V1 -55 1 1m
+.end
