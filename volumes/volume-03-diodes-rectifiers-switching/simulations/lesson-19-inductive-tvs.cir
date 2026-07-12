@@ -1,0 +1,12 @@
+* Lesson 19 - Inductive TVS clamp
+V1 VCC 0 24
+RCOIL VCC N1 30
+LCOIL N1 SW 200m
+S1 SW 0 CTRL 0 SWM
+VCTRL CTRL 0 PULSE(0 5 0 1u 1u 50m 100m)
+DTVS SW VCC DTV
+.model SWM SW(Ron=20m Roff=1G Vt=2.5 Vh=0.1)
+.model DTV D(Is=1n N=1.2 Bv=36 Ibv=1m Rs=0.5)
+.tran 10u 100m startup
+.meas tran VSWMAX MAX V(SW)
+.end
