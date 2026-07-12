@@ -1,0 +1,78 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 2 Lesson 39 - Simulation to Bench"
+$EndDescr
+$Comp
+L Simulation_SPICE:VSOURCE VREG
+U 1 1 593900001
+P 2500 3900
+F 0 "VREG" H 2630 3991 50 0000 L CNN
+F 1 "3.3" H 2630 3900 50 0000 L CNN
+	1    2500 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R RSRC
+U 1 1 593900002
+P 4200 3000
+F 0 "RSRC" V 3993 3000 50 0000 C CNN
+F 1 "40m" V 4084 3000 50 0000 C CNN
+	1    4200 3000
+	0 1 1 0
+$EndComp
+$Comp
+L Device:L LSRC
+U 1 1 593900003
+P 5600 3000
+F 0 "LSRC" V 5790 3000 50 0000 C CNN
+F 1 "3n" V 5699 3000 50 0000 C CNN
+	1    5600 3000
+	0 -1 -1 0
+$EndComp
+$Comp
+L Device:C CLOCAL
+U 1 1 593900004
+P 7200 3900
+F 0 "CLOCAL" H 7315 3946 50 0000 L CNN
+F 1 "220u" H 7315 3855 50 0000 L CNN
+	1    7200 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L power:0 #PWR05901
+U 1 1 593900005
+P 5200 4800
+F 0 "#PWR05901" H 5200 4550 50 0001 C CNN
+F 1 "0" H 5205 4627 50 0000 C CNN
+	1    5200 4800
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	2500 3600 2500 3000
+Wire Wire Line
+	2500 3000 4050 3000
+Wire Wire Line
+	4350 3000 5450 3000
+Wire Wire Line
+	5750 3000 7200 3000
+Wire Wire Line
+	7200 3000 7200 3750
+Wire Wire Line
+	7200 4050 7200 4600
+Wire Wire Line
+	7200 4600 2500 4600
+Wire Wire Line
+	2500 4600 2500 4200
+Wire Wire Line
+	5200 4600 5200 4800
+Text Notes 7900 2700 0 60 ~ 0
+.tran 10n 150u startup
+Text Notes 7900 3000 0 50 ~ 0
+Reference netlist adds pulsed load and probe model.
+$EndSCHEMATC
