@@ -1,0 +1,10 @@
+* Volume 3 Lesson 4 - Bridge rectifier
+V1 AC1 AC2 SIN(0 16.97 60)
+D1 AC1 OUTP DBR
+D2 AC2 OUTP DBR
+D3 OUTN AC1 DBR
+D4 OUTN AC2 DBR
+RLOAD OUTP OUTN 100
+.model DBR D(Is=5n N=1.8 Rs=0.1 Bv=100)
+.tran 20u 100m startup
+.end
