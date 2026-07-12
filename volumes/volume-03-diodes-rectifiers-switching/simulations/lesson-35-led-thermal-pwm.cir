@@ -1,0 +1,11 @@
+* Lesson 35 - LED PWM and path loss
+V1 IN 0 12
+S1 IN N1 CTRL 0 SWM
+VCTRL CTRL 0 PULSE(0 5 0 1u 1u 5m 10m)
+RSET N1 LEDA 25.7
+DLED LEDA 0 LEDM
+.model SWM SW(Ron=50m Roff=1G Vt=2.5 Vh=0.1)
+.model LEDM D(Is=1e-20 N=2 Rs=1 Eg=2.7)
+.tran 10u 30m startup
+.meas tran PAVG AVG V(IN,N1)*I(V1) FROM=10m TO=30m
+.end
