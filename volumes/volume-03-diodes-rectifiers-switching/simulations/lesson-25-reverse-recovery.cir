@@ -1,0 +1,11 @@
+* Lesson 25 - Reverse recovery fixture
+V1 BUS 0 100
+LLOAD BUS NODE 100u
+D1 0 NODE DREC
+S1 NODE 0 CTRL 0 SWM
+VCTRL CTRL 0 PULSE(0 5 2u 2n 2n 3u 8u)
+.model DREC D(Is=2n N=1.5 Rs=0.1 Tt=80n Cjo=30p Bv=200)
+.model SWM SW(Ron=50m Roff=1G Vt=2.5 Vh=0.1)
+.tran 200p 10u startup
+.meas tran IRRM MIN I(D1)
+.end
