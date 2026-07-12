@@ -1,0 +1,17 @@
+* Lesson 40 - Capstone rectifier section
+V1 SRC AC2 SIN(0 19.8 50)
+RS SRC AC1 1.2
+D1 AC1 BUS DBR
+D2 AC2 BUS DBR
+D3 RET AC1 DBR
+D4 RET AC2 DBR
+C1 BUS RET 3300u
+RLOAD BUS RET 60
+DTVS BUS RET DTV
+.model DBR D(Is=5n N=1.8 Rs=0.1 Bv=100)
+.model DTV D(Is=1n N=1.2 Bv=22 Ibv=1m Rs=0.25 Cjo=200p)
+.tran 20u 500m startup
+.meas tran VBUSMAX MAX V(BUS,RET) FROM=300m TO=500m
+.meas tran VBUSMIN MIN V(BUS,RET) FROM=300m TO=500m
+.meas tran IINPK MAX I(V1)
+.end

@@ -1,0 +1,9 @@
+* Lesson 36 - Photodiode current source and capacitance
+IPH NODE 0 PULSE(0 50u 10u 100n 100n 50u 100u)
+CD NODE 0 20p
+RSH NODE 0 100Meg
+IDARK NODE 0 DC 5n
+RLOAD NODE 0 100k
+.tran 10n 200u startup
+.ac dec 100 10 100Meg
+.end
