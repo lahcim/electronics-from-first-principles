@@ -1,0 +1,10 @@
+* Lesson 9 - Turn-on intervals with source inductance
+V1 BUS 0 48
+RLOAD BUS D 4.8
+M1 D G S S NM
+LS S 0 5n
+VDRV DRV 0 PULSE(0 10 100n 5n 5n 1u 2u)
+RG DRV G 10
+.model NM NMOS(VTO=2.5 KP=50 RD=10m RS=10m CGS=2n CGD=300p)
+.tran 100p 3u startup
+.end
