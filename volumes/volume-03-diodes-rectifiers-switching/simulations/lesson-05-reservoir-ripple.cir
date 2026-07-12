@@ -1,0 +1,15 @@
+* Volume 3 Lesson 5 - Bridge with reservoir capacitor
+V1 SRC AC2 SIN(0 16.97 60)
+RS SRC AC1 1
+D1 AC1 OUTP DBR
+D2 AC2 OUTP DBR
+D3 OUTN AC1 DBR
+D4 OUTN AC2 DBR
+C1 OUTP OUTN 1000u
+RLOAD OUTP OUTN 100
+.model DBR D(Is=5n N=1.8 Rs=0.1 Bv=100)
+.tran 20u 500m startup
+.meas tran VMAX MAX V(OUTP,OUTN) FROM=300m TO=500m
+.meas tran VMIN MIN V(OUTP,OUTN) FROM=300m TO=500m
+.meas tran IDPK MAX I(D1) FROM=300m TO=500m
+.end
