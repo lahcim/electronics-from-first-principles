@@ -1,0 +1,16 @@
+* Lesson 40 - Final capstone: 5 V rail section
+.param CAGE=0.7 ESRAGE=2
+VREG SRC 0 5
+RSRC SRC N1 25m
+LSRC N1 RAIL 3n
+ILOAD RAIL 0 PULSE(0.1 1.6 1u 25n 25n 50u 200u)
+RESR RAIL C1 {20m*ESRAGE}
+CLOCAL C1 0 {1000u*CAGE}
+.tran 1n 120u startup
+.meas tran VMIN MIN V(RAIL)
+.meas tran VDROOP PARAM='5-VMIN'
+.end
+
+* Create separate reviewable netlists for precharge, hold-up, discharge,
+* button debounce, cable termination/noise, solenoid clamp, fault limiting,
+* and probe-loading sensitivity using the earlier lesson fixtures.

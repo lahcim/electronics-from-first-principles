@@ -1,0 +1,17 @@
+* Lesson 39 - Measurement-aware rail-step model
+VREG SRC 0 3.3
+RSRC SRC N1 40m
+LSRC N1 RAIL 3n
+ILOAD RAIL RET PULSE(0.05 0.55 10u 20n 20n 50u 200u)
+RRET RET 0 10m
+RCE RAIL C1 25m
+LCE C1 C2 1n
+CLOCAL C2 RET 220u
+* Probe model
+LPG RAIL PM 20n
+CPROBE PM RET 10p
+RPROBE PM RET 10Meg
+.tran 10n 150u startup
+.meas tran VMIN MIN V(RAIL,RET)
+.meas tran TREC WHEN V(RAIL,RET)=3.267 RISE=1
+.end

@@ -1,0 +1,67 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 2 Lesson 37 - Passive Fault Limiting"
+$EndDescr
+$Comp
+L Simulation_SPICE:VSOURCE V1
+U 1 1 573700001
+P 2500 3900
+F 0 "V1" H 2630 3991 50 0000 L CNN
+F 1 "24" H 2630 3900 50 0000 L CNN
+	1    2500 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R RPROTECT
+U 1 1 573700002
+P 4700 3000
+F 0 "RPROTECT" V 4493 3000 50 0000 C CNN
+F 1 "1" V 4584 3000 50 0000 C CNN
+	1    4700 3000
+	0 1 1 0
+$EndComp
+$Comp
+L Device:R RLOAD
+U 1 1 573700003
+P 6800 3900
+F 0 "RLOAD" H 6870 3946 50 0000 L CNN
+F 1 "2" H 6870 3855 50 0000 L CNN
+	1    6800 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L power:0 #PWR05701
+U 1 1 573700004
+P 5000 4800
+F 0 "#PWR05701" H 5000 4550 50 0001 C CNN
+F 1 "0" H 5005 4627 50 0000 C CNN
+	1    5000 4800
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	2500 3600 2500 3000
+Wire Wire Line
+	2500 3000 4550 3000
+Wire Wire Line
+	4850 3000 6800 3000
+Wire Wire Line
+	6800 3000 6800 3750
+Wire Wire Line
+	6800 4050 6800 4600
+Wire Wire Line
+	6800 4600 2500 4600
+Wire Wire Line
+	2500 4600 2500 4200
+Wire Wire Line
+	5000 4600 5000 4800
+Text Notes 7900 2800 0 60 ~ 0
+.tran 10u 500m startup
+Text Notes 7900 3100 0 50 ~ 0
+Reference netlist adds fault switch and I²t integration.
+$EndSCHEMATC
