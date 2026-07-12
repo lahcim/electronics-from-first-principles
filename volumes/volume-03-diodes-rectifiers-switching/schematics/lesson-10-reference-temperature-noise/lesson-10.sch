@@ -1,0 +1,80 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 3 Lesson 10 - Reference Drift and Filtering"
+$EndDescr
+$Comp
+L Simulation_SPICE:VSOURCE V1
+U 1 1 701000001
+P 2600 3900
+F 0 "V1" H 2730 3991 50 0000 L CNN
+F 1 "12" H 2730 3900 50 0000 L CNN
+	1    2600 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 701000002
+P 4400 3000
+F 0 "R1" V 4193 3000 50 0000 C CNN
+F 1 "1k" V 4284 3000 50 0000 C CNN
+	1    4400 3000
+	0 1 1 0
+$EndComp
+$Comp
+L Device:D_Zener DZ
+U 1 1 701000003
+P 6100 3900
+F 0 "DZ" V 6054 3980 50 0000 L CNN
+F 1 "5.1V" V 6145 3980 50 0000 L CNN
+	1    6100 3900
+	0 1 1 0
+$EndComp
+$Comp
+L Device:C CF
+U 1 1 701000004
+P 7600 3900
+F 0 "CF" H 7715 3946 50 0000 L CNN
+F 1 "10u" H 7715 3855 50 0000 L CNN
+	1    7600 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L power:0 #PWR07001
+U 1 1 701000005
+P 5000 4800
+F 0 "#PWR07001" H 5000 4550 50 0001 C CNN
+F 1 "0" H 5005 4627 50 0000 C CNN
+	1    5000 4800
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	2600 3600 2600 3000
+Wire Wire Line
+	2600 3000 4250 3000
+Wire Wire Line
+	4550 3000 7600 3000
+Wire Wire Line
+	6100 3000 6100 3750
+Wire Wire Line
+	7600 3000 7600 3750
+Wire Wire Line
+	6100 4050 6100 4600
+Wire Wire Line
+	7600 4050 7600 4600
+Wire Wire Line
+	6100 4600 7600 4600
+Wire Wire Line
+	2600 4200 2600 4600
+Wire Wire Line
+	2600 4600 6100 4600
+Wire Wire Line
+	5000 4600 5000 4800
+Text Notes 8200 2800 0 60 ~ 0
+.tran 10u 100m startup
+$EndSCHEMATC
