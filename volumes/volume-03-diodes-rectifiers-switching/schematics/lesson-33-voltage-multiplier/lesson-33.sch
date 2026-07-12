@@ -1,0 +1,39 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 3 Lesson 33 - Voltage Multiplier"
+$EndDescr
+$Comp
+L Device:D D1
+U 1 1 933300001
+P 4300 3000
+F 0 "D1" H 4300 2783 50 0000 C CNN
+F 1 "Pump" H 4300 2874 50 0000 C CNN
+	1    4300 3000
+	-1 0 0 1
+$EndComp
+$Comp
+L Device:C CFLY
+U 1 1 933300002
+P 5900 3900
+F 0 "CFLY" H 6015 3946 50 0000 L CNN
+F 1 "10u" H 6015 3855 50 0000 L CNN
+	1    5900 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:D D2
+U 1 1 933300003
+P 7300 3000
+F 0 "D2" H 7300 2783 50 0000 C CNN
+F 1 "Pump" H 7300 2874 50 0000 C CNN
+	1    7300 3000
+	-1 0 0 1
+$EndComp
+Text Notes 8200 2800 0 60 ~ 0
+.tran 100n 5m startup
+$EndSCHEMATC
