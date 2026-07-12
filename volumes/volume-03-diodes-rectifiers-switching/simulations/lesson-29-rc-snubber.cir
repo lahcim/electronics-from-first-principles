@@ -1,0 +1,10 @@
+* Lesson 29 - RC snubber tuning
+V1 IN 0 PULSE(0 100 0 2n 2n 100n 500n)
+LSTRAY IN NODE 50n
+CPAR NODE 0 100p
+RSNUB NODE SN 22
+CSNUB SN 0 220p
+RLOAD NODE 0 10k
+.tran 100p 2u startup
+.meas tran VPK MAX V(NODE)
+.end
