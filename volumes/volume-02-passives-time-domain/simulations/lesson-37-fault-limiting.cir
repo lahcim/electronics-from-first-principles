@@ -1,0 +1,14 @@
+* Lesson 37 - Fault limiting and accumulated I^2t
+V1 SRC 0 24
+RS SRC N1 100m
+RPROTECT N1 LOAD 1
+RLOAD LOAD 0 2
+SFAULT LOAD 0 CTRL 0 SW
+VCTRL CTRL 0 PULSE(0 5 10m 1u 1u 400m 1s)
+.model SW SW(Ron=10m Roff=1G Vt=2.5 Vh=0.1)
+BISQ I2T 0 I=I(RPROTECT)^2
+CI2T I2T 0 1 IC=0
+.tran 10u 500m startup
+.meas tran IFAULTMAX MAX I(RPROTECT) FROM=10m TO=500m
+.meas tran I2TEND FIND V(I2T) AT=500m
+.end
