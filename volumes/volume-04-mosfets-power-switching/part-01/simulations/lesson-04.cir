@@ -1,0 +1,7 @@
+* Lesson 4 - MOSFET output characteristics
+VDS D 0 0
+VGS G 0 2
+M1 D G 0 0 NM
+.model NM NMOS(VTO=2 KP=2 LAMBDA=0.02)
+.dc VDS 0 20 20m VGS 2 10 2
+.end
