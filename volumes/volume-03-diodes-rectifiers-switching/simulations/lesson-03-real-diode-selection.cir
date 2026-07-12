@@ -1,0 +1,10 @@
+* Volume 3 Lesson 3 - Silicon versus Schottky comparison
+V1 IN 0 PULSE(0 12 0 50n 50n 2u 5u)
+R1 IN A1 10
+D1 A1 0 DSIL
+R2 IN A2 10
+D2 A2 0 DSCH
+.model DSIL D(Is=2n N=1.8 Rs=50m Tt=80n Cjo=30p Bv=100)
+.model DSCH D(Is=2u N=1.1 Rs=30m Tt=2n Cjo=100p Bv=40)
+.tran 20n 50u startup
+.end

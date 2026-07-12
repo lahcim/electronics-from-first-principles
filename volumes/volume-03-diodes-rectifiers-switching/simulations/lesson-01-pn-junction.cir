@@ -1,0 +1,6 @@
+* Volume 3 Lesson 1 - PN junction I-V sweep
+V1 A 0 0
+D1 A 0 DGEN
+.model DGEN D(Is=2n N=1.8 Rs=0.2 Cjo=20p Bv=50 Ibv=10u)
+.dc V1 -5 1 1m
+.end

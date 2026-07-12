@@ -1,0 +1,54 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 3 Lesson 1 - PN Junction I-V"
+$EndDescr
+$Comp
+L Simulation_SPICE:VSOURCE V1
+U 1 1 610100001
+P 3200 3900
+F 0 "V1" H 3330 3991 50 0000 L CNN
+F 1 "0" H 3330 3900 50 0000 L CNN
+	1    3200 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:D D1
+U 1 1 610100002
+P 5600 3000
+F 0 "D1" H 5600 2783 50 0000 C CNN
+F 1 "DGEN" H 5600 2874 50 0000 C CNN
+	1    5600 3000
+	-1 0 0 1
+$EndComp
+$Comp
+L power:0 #PWR06101
+U 1 1 610100003
+P 4400 4800
+F 0 "#PWR06101" H 4400 4550 50 0001 C CNN
+F 1 "0" H 4405 4627 50 0000 C CNN
+	1    4400 4800
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	3200 3600 3200 3000
+Wire Wire Line
+	3200 3000 5450 3000
+Wire Wire Line
+	5750 3000 7000 3000
+Wire Wire Line
+	7000 3000 7000 4600
+Wire Wire Line
+	7000 4600 3200 4600
+Wire Wire Line
+	3200 4600 3200 4200
+Wire Wire Line
+	4400 4600 4400 4800
+Text Notes 7800 2800 0 60 ~ 0
+.dc V1 -5 1 1m
+$EndSCHEMATC

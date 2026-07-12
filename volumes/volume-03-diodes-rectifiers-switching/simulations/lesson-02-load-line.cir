@@ -1,0 +1,8 @@
+* Volume 3 Lesson 2 - Diode load line
+V1 IN 0 5
+R1 IN A 1k
+D1 A 0 DGEN
+.model DGEN D(Is=2n N=1.8 Rs=0.2)
+.op
+.dc V1 0 5 10m
+.end

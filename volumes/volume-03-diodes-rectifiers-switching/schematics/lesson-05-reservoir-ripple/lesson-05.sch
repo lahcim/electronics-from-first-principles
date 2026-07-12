@@ -1,0 +1,93 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 3 Lesson 5 - Reservoir Capacitor Ripple"
+$EndDescr
+$Comp
+L Simulation_SPICE:VSIN V1
+U 1 1 650500001
+P 2300 3900
+F 0 "V1" H 2430 3991 50 0000 L CNN
+F 1 "SIN(0 16.97 60)" H 2430 3900 50 0000 L CNN
+	1    2300 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R RS
+U 1 1 650500002
+P 3900 3000
+F 0 "RS" V 3693 3000 50 0000 C CNN
+F 1 "1" V 3784 3000 50 0000 C CNN
+	1    3900 3000
+	0 1 1 0
+$EndComp
+$Comp
+L Device:D D1
+U 1 1 650500003
+P 5400 3000
+F 0 "D1" H 5400 2783 50 0000 C CNN
+F 1 "DBR" H 5400 2874 50 0000 C CNN
+	1    5400 3000
+	-1 0 0 1
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 650500004
+P 7000 3900
+F 0 "C1" H 7115 3946 50 0000 L CNN
+F 1 "1000u" H 7115 3855 50 0000 L CNN
+	1    7000 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R RLOAD
+U 1 1 650500005
+P 8300 3900
+F 0 "RLOAD" H 8370 3946 50 0000 L CNN
+F 1 "100" H 8370 3855 50 0000 L CNN
+	1    8300 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L power:0 #PWR06501
+U 1 1 650500006
+P 5200 4800
+F 0 "#PWR06501" H 5200 4550 50 0001 C CNN
+F 1 "0" H 5205 4627 50 0000 C CNN
+	1    5200 4800
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	2300 3600 2300 3000
+Wire Wire Line
+	2300 3000 3750 3000
+Wire Wire Line
+	4050 3000 5250 3000
+Wire Wire Line
+	5550 3000 8300 3000
+Wire Wire Line
+	7000 3000 7000 3750
+Wire Wire Line
+	8300 3000 8300 3750
+Wire Wire Line
+	7000 4050 7000 4600
+Wire Wire Line
+	8300 4050 8300 4600
+Wire Wire Line
+	7000 4600 8300 4600
+Wire Wire Line
+	2300 4200 2300 4600
+Wire Wire Line
+	2300 4600 7000 4600
+Wire Wire Line
+	5200 4600 5200 4800
+Text Notes 8500 2500 0 60 ~ 0
+Complete bridge is in reference netlist.
+Text Notes 8500 2800 0 60 ~ 0
+.tran 20u 500m startup
+$EndSCHEMATC
