@@ -1,0 +1,67 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 3 Lesson 4 - Bridge Rectifier"
+$EndDescr
+$Comp
+L Simulation_SPICE:VSIN V1
+U 1 1 640400001
+P 2500 3900
+F 0 "V1" H 2630 3991 50 0000 L CNN
+F 1 "SIN(0 16.97 60)" H 2630 3900 50 0000 L CNN
+	1    2500 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:D D1
+U 1 1 640400002
+P 4700 3000
+F 0 "D1" H 4700 2783 50 0000 C CNN
+F 1 "DBR" H 4700 2874 50 0000 C CNN
+	1    4700 3000
+	-1 0 0 1
+$EndComp
+$Comp
+L Device:R RLOAD
+U 1 1 640400003
+P 7000 3900
+F 0 "RLOAD" H 7070 3946 50 0000 L CNN
+F 1 "100" H 7070 3855 50 0000 L CNN
+	1    7000 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L power:0 #PWR06401
+U 1 1 640400004
+P 5000 4800
+F 0 "#PWR06401" H 5000 4550 50 0001 C CNN
+F 1 "0" H 5005 4627 50 0000 C CNN
+	1    5000 4800
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	2500 3600 2500 3000
+Wire Wire Line
+	2500 3000 4550 3000
+Wire Wire Line
+	4850 3000 7000 3000
+Wire Wire Line
+	7000 3000 7000 3750
+Wire Wire Line
+	7000 4050 7000 4600
+Wire Wire Line
+	7000 4600 2500 4600
+Wire Wire Line
+	2500 4600 2500 4200
+Wire Wire Line
+	5000 4600 5000 4800
+Text Notes 7800 2800 0 60 ~ 0
+Complete four-diode bridge is in reference netlist.
+Text Notes 7800 3100 0 60 ~ 0
+.tran 20u 100m startup
+$EndSCHEMATC
