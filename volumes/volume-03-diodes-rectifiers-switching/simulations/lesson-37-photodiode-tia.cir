@@ -1,0 +1,10 @@
+* Lesson 37 - Simplified photodiode TIA
+IPH SUM 0 PULSE(0 10u 10u 100n 100n 50u 100u)
+CD SUM 0 25p
+EOP OUT 0 0 SUM 1e5
+RF OUT SUM 82k
+CF OUT SUM 10p
+RLOAD OUT 0 100k
+.tran 10n 200u startup
+.ac dec 100 10 100Meg
+.end
