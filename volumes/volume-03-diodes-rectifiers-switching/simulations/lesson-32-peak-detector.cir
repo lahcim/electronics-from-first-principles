@@ -1,0 +1,11 @@
+* Lesson 32 - Peak detector
+V1 IN 0 PULSE(0 3 0 100n 100n 5u 100m)
+R1 IN A 100
+D1 A HOLD DDET
+C1 HOLD 0 220n
+RLEAK HOLD 0 150Meg
+.model DDET D(Is=2u N=1.1 Rs=1 Cjo=5p)
+.tran 1u 100m startup
+.meas tran VHELD FIND V(HOLD) AT=10m
+.meas tran VDROOP PARAM='VHELD-V(HOLD)' AT=60m
+.end
