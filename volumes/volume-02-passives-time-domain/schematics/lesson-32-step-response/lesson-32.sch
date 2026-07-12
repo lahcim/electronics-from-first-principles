@@ -1,0 +1,76 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Simulation_SPICE
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "Volume 2 Lesson 32 - Step Response Diagnostic"
+$EndDescr
+$Comp
+L Simulation_SPICE:VPULSE V1
+U 1 1 523200001
+P 2600 3900
+F 0 "V1" H 2730 3991 50 0000 L CNN
+F 1 "PULSE(0 1 0 100n 100n 10m 20m)" H 2730 3900 50 0000 L CNN
+	1    2600 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 523200002
+P 4300 3000
+F 0 "R1" V 4093 3000 50 0000 C CNN
+F 1 "100" V 4184 3000 50 0000 C CNN
+	1    4300 3000
+	0 1 1 0
+$EndComp
+$Comp
+L Device:L L1
+U 1 1 523200003
+P 5700 3000
+F 0 "L1" V 5890 3000 50 0000 C CNN
+F 1 "10m" V 5799 3000 50 0000 C CNN
+	1    5700 3000
+	0 -1 -1 0
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 523200004
+P 7200 3900
+F 0 "C1" H 7315 3946 50 0000 L CNN
+F 1 "1u" H 7315 3855 50 0000 L CNN
+	1    7200 3900
+	1 0 0 -1
+$EndComp
+$Comp
+L power:0 #PWR05201
+U 1 1 523200005
+P 5200 4800
+F 0 "#PWR05201" H 5200 4550 50 0001 C CNN
+F 1 "0" H 5205 4627 50 0000 C CNN
+	1    5200 4800
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	2600 3600 2600 3000
+Wire Wire Line
+	2600 3000 4150 3000
+Wire Wire Line
+	4450 3000 5550 3000
+Wire Wire Line
+	5850 3000 7200 3000
+Wire Wire Line
+	7200 3000 7200 3750
+Wire Wire Line
+	7200 4050 7200 4600
+Wire Wire Line
+	7200 4600 2600 4600
+Wire Wire Line
+	2600 4600 2600 4200
+Wire Wire Line
+	5200 4600 5200 4800
+Text Notes 8000 2800 0 60 ~ 0
+.tran 100n 20m startup
+$EndSCHEMATC
