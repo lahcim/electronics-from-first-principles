@@ -1,0 +1,9 @@
+* Lesson 33 - Source termination
+V1 SRC 0 PULSE(0 3.3 0 500p 500p 50n 100n)
+RDRV SRC N1 15
+RSER N1 LINEIN 35
+T1 LINEIN 0 LOAD 0 Z0=50 TD=10n
+RLOAD LOAD 0 1Meg
+CLOAD LOAD 0 5p
+.tran 100p 100n startup
+.end
