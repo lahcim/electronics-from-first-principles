@@ -1,0 +1,13 @@
+* Lesson 38 - New versus aged capacitor bank
+.param CAGE=1 ESRAGE=1
+VREG SRC 0 12
+RSRC SRC N1 30m
+LSRC N1 RAIL 2n
+ILOAD RAIL 0 PULSE(0.2 1.2 10u 20n 20n 50u 200u)
+RESR RAIL C1 {80m*ESRAGE}
+C1 C1 0 {1000u*CAGE}
+.tran 10n 150u startup
+.meas tran VMIN MIN V(RAIL)
+* New: CAGE=1 ESRAGE=1
+* Aged: CAGE=0.7 ESRAGE=2
+.end
