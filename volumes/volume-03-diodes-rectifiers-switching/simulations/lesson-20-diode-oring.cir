@@ -1,0 +1,11 @@
+* Lesson 20 - Diode OR-ing
+VA A 0 5
+VB B 0 4.8
+DA A OUT DS
+DB B OUT DS
+RA A 0 1Meg
+RB B 0 1Meg
+RLOAD OUT 0 10
+.model DS D(Is=2u N=1.1 Rs=50m Cjo=100p Bv=40)
+.dc VB 4 6 10m
+.end
