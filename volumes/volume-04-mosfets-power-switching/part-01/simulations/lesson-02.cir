@@ -1,0 +1,9 @@
+* Lesson 2 - Enhancement vs depletion
+VDS D 0 10
+VGS G 0 0
+ME D G 0 0 ENH
+MD D G 0 0 DEP
+.model ENH NMOS(VTO=2 KP=1)
+.model DEP NMOS(VTO=-2 KP=0.2)
+.dc VGS -5 10 10m
+.end

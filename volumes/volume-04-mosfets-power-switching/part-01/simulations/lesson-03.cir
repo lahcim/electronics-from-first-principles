@@ -1,0 +1,12 @@
+* Lesson 3 - N and P channel high-side comparison
+VN IN 0 12
+MN OUTN GN IN IN NM
+MP OUTP GP IN IN PM
+RN OUTN 0 6
+RP OUTP 0 6
+VGN GN 0 22
+VGP GP 0 2
+.model NM NMOS(VTO=2 KP=50 RD=10m RS=10m)
+.model PM PMOS(VTO=-2 KP=20 RD=25m RS=25m)
+.op
+.end

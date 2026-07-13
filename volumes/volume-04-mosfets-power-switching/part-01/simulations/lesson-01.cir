@@ -1,0 +1,7 @@
+* Lesson 1 - MOSFET transfer and gate charging
+VDS D 0 5
+VGS G 0 0
+M1 D G 0 0 NM
+.model NM NMOS(VTO=2 KP=8 RS=20m RD=20m CGS=1n CGD=300p)
+.dc VGS 0 10 10m
+.end

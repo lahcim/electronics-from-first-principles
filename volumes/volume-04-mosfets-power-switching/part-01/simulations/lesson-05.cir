@@ -1,0 +1,10 @@
+* Lesson 5 - Datasheet corner model
+.param RON=27m
+V1 IN 0 12
+VG G 0 10
+M1 IN G OUT 0 NM
+RLOAD OUT 0 0.8
+.model NM NMOS(VTO=2 KP=100 RD={RON/2} RS={RON/2} CGS=2n CGD=600p)
+.op
+.meas op PLOSS PARAM='I(RLOAD)^2*RON'
+.end
