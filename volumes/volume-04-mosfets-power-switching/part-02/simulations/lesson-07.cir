@@ -1,0 +1,6 @@
+* Lesson 7 - Gate charge approximation
+IG G 0 PULSE(0 1.5 0 1n 1n 40n 100n)
+CG G 0 6n
+RLEAK G 0 1Meg
+.tran 100p 300n startup
+.end

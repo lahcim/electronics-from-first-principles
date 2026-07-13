@@ -1,0 +1,8 @@
+* Lesson 6 - Miller injection
+VDRV G 0 0
+RG G 0 1k
+CDG D G 120p
+VDS D 0 PULSE(0 40 0 1n 1n 1u 2u)
+.tran 100p 3u startup
+.meas tran VGMAX MAX V(G)
+.end

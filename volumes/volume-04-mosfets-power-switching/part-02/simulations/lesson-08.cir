@@ -1,0 +1,8 @@
+* Lesson 8 - Gate resistor sweep
+VDRV DRV 0 PULSE(0 12 0 2n 2n 500n 1u)
+RG DRV G 10
+LG G GI 10n
+CG GI 0 3n
+.tran 100p 3u startup
+.meas tran VGMAX MAX V(GI)
+.end
